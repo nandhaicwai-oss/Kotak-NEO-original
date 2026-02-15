@@ -1,0 +1,64 @@
+<div id="statusRootDiv">
+
+    <div>
+        <span class="marginHeader">Total Margin</span><span class="colonSep">:</span> <span id="totalMargin"
+            class="statusNumber">N/A</span>
+    </div>
+    <div>
+        <span class="marginHeader">Used Margin </span><span class="colonSep">:</span> <span id="usedMargin"
+            class="statusNumber">N/A</span>
+    </div>
+
+    <div>
+        <span class="marginHeader">Available Margin</span> <span class="colonSep">:</span> <span class="statusNumber"
+            id="availMargin">N/A</span>
+    </div>
+    <div id="availTD">
+        <span class="marginHeader">Available Cash</span> <span class="colonSep">:</span> <span id="availCash"
+            class="statusNumber">N/A</span>
+    </div>
+    <div id="emptyTD">
+
+    </div>
+
+    
+    <div>
+        <span class="hoverBtn" data-balloon="Waiting For Reconnection!" data-balloon-pos="up">
+            <i class="fa-solid fa-triangle-exclamation text-Negative" id="plWarningElement"></i>
+        </span>
+        <span class="marginHeader">P&L</span><span class="colonSep">:</span> <span class="statusNumber"
+            id="MTM">N/A</span>
+    </div>
+    <div id="dayMTMParent" style="cursor: pointer;display: none">
+        <span class="marginHeader" kt-tooltip="PNL only for today's trades">Day's History</span><span
+            class="colonSep">:</span> <span class="statusNumber" id="dayMTM">N/A</span>
+    </div>
+    <div id="netPNLParent" style="cursor: pointer;display: none;">
+        <span class="marginHeader" kt-tooltip="PNL minus today's brokerage and other charges">Net P&L</span><span
+            class="colonSep">:</span> <span class="statusNumber" id="netMTM">N/A</span>
+    </div>
+    <div id="netValueParent" style="cursor: pointer;display: none;">
+        <span class="marginHeader"
+            kt-tooltip="Today's total value of sell transactions minus total values of buy transactions">Day's Net
+            Value</span><span class="colonSep">:</span> <span class="statusNumber" id="netValue">N/A</span>
+    </div>
+    <div id="netProjectedParent" style="cursor: pointer;">
+        <span class="marginHeader"
+            kt-tooltip="Sum of all group projected PNL minus today's brokerage and other charges"> Projected</span><span
+            class="colonSep">:</span> <span class="statusNumber" id="netProjected">N/A</span>
+    </div>
+    <div>
+        <span class="marginHeader" kt-tooltip="Today's brokerage plus all other charges">Day's Charges</span><span
+            class="colonSep">:</span> <span class="statusNumber" id="totalCharges">N/A</span>
+    </div>
+    <div id="statusButtonsSet">
+        <i kt-tooltip="KitePlus Basket" id="basketOpenBtn"
+            class="fa-solid fa-basket-shopping statusBarButton hoverBtn"></i>
+        
+        <i id="settingBtn" class="fa-solid fa-gear statusBarButton hoverBtn"></i>
+        
+    </div>
+    
+</div>
+
+

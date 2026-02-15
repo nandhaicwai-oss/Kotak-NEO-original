@@ -1,0 +1,187 @@
+<div id="orderPlacementBG"></div>
+
+<div id="orderPlacementModal">
+
+    <div class="modal-container layer-2">
+        <div class="dragHeaderHandle"></div>
+        <div class="instHeaderSection">
+            <div class="instHeader">Nifty 28500 CE</div>
+        </div>
+        <div class="modal-header">
+            <div style="flex-basis: 25%;"></div>
+            <div style="flex-basis: 50%;">
+                <div class="centerHeaderParent">
+                    <div class="row instInfoRow">
+                        <div class="rowStrike rowUpDown">
+                            <i class="fa-solid fa-circle-minus strikeDown"></i>
+                            <span style="font-size: 1.1em;">24600</span>
+                            <div class="posCallPutType">
+                                <span>CE</span>
+                            </div>
+                            <i class="fa-solid fa-circle-plus strikeUp"></i>
+
+                        </div>
+                        <div class="su-select orderPlacementExpiry rowValue">
+                            <select name="orderExpirySelect">
+                                <option value="0">21 AUG</option>
+                                <option value="1">28 AUG</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row"><span class="headerPrice">25500</span><span class="headerChange">35</span></div>
+                    <div class="row">
+                        <span class="text-label small aqua amber orderDayType" style="cursor: pointer;">
+                            MIS
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="sliderF buySellSwitch"
+                style="display: flex; justify-content: flex-end; align-items: flex-start;flex-basis: 25%;padding: 0em 0em;">
+                <label class="switch">
+                    <input type="checkbox" name="nBuySellRadio" class="buySellRadio"" style=" display: none">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="depthInfoHeader">
+                
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="extraPriceInfo">
+                <div class="depthInfoParent">
+                    <table class="bidDepthInfo">
+                        <thead>
+                            <tr>
+                                <th>Bid</th>
+                                <th>Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                    <table class="askDepthInfo">
+                        <thead>
+                            <tr>
+                                <th>Ask</th>
+                                <th>Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="instDayInfoParent">
+                    <div class="instDayInfo">
+                        <div class="instDayInfoHeader">Open</div>
+                        <div class="instDayInfoValue instOpen">0</div>
+                    </div>
+                    <div class="instDayInfo">
+                        <div class="instDayInfoHeader">Low</div>
+                        <div class="instDayInfoValue instLow">0</div>
+                    </div>
+                    <div class="instDayInfo">
+                        <div class="instDayInfoHeader">High</div>
+                        <div class="instDayInfoValue instHigh">0</div>
+                    </div>
+                    <div class="instDayInfo">
+                        <div class="instDayInfoHeader">Average</div>
+                        <div class="instDayInfoValue instAverage">0</div>
+                    </div>
+                    <div class="instDayInfo">
+                        <div class="instDayInfoHeader">Volume</div>
+                        <div class="instDayInfoValue instVolume">0</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="priceSetRowParent">
+                <div class="priceSetColumn">
+                    <div>Quantity</div>
+                    <div class="rowQuantity rowUpDown quantityGroup">
+                        <i class="fa-solid fa-circle-minus quantityDown"></i>
+                        <div class="su-input-group">
+                            <input type="text" name="nQuantity" autocorrect="off" autocomplete="off" maxlength="8"
+                                size="5" />
+                        </div>
+                        <i class="fa-solid fa-circle-plus quantityUp"></i>
+                    </div>
+                    <div class="lotAmount">1 Lot</div>
+                </div>
+                <div class="priceSetColumn priceParent">
+                    <div class="priceTypeHeader">Market Price</div>
+                    <div class="su-input-group priceGroup">
+                        <input type="text" autocorrect="off" autocomplete="off" maxlength="8" size="5" />
+                    </div>
+                    <div class="orderRadioSet">
+                        <div class="su-radio-wrap">
+                            <input id="marketRadio" checked="true" type="radio" label="Market" class="su-radio"
+                                name="orderPlaceType" value="MARKET">
+                            <label for="marketRadio" class="su-radio-label">Market</label>
+                        </div>
+                        <div class="su-radio-wrap">
+                            <input id="limitRadio" type="radio" label="Limit" class="su-radio" name="orderPlaceType"
+                                value="LIMIT">
+                            <label for="limitRadio" class="su-radio-label">Limit</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="priceSetColumn triggerParent">
+                    <div class="priceTypeHeader">Trigger Price</div>
+                    <div class="su-input-group triggerPriceGroup">
+                        <input type="text" autocorrect="off" autocomplete="off" maxlength="8" size="5" />
+                    </div>
+                    <div class="orderRadioSet">
+                        <div class="su-radio-wrap" style="display: none;">
+                            <input id="slmRadio" type="radio" label="SL-M" class="su-radio" name="orderPlaceType"
+                                value="SL-M">
+                            <label for="slmRadio" class="su-radio-label">SL-M</label>
+                        </div>
+                        <div class="su-radio-wrap">
+                            <input id="slRadio" type="radio" label="SL" class="su-radio" name="orderPlaceType"
+                                value="SL">
+                            <label for="slRadio" class="su-radio-label">SL</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="modal-footer">
+            <div class="stateInfo">
+                <div>
+                    <div class="infoHeader">Premium</div>
+                    <div class="infoContent" id="orderPlaceInfoPremium">N/A</div>
+                </div>
+                <div>
+                    <div class="infoHeader">Extra Margin</div>
+                    <div class="infoContent" id="orderPlaceInfoAddMargin">N/A</div>
+                </div>
+                <div>
+                    <div class="infoHeader">Remaining Margin</div>
+                    <div class="infoContent" id="orderPlaceInfoRemMargin">N/A</div>
+                </div>
+            </div>
+            <div>
+                <div class="actions">
+                    <button type="button" class="button-blue buttonExecute">
+                        <span class="executeButtonLock"><i class="fa-solid fa-lock"></i></span>
+                        <span class="executeButtonText">SELL</span>
+                    </button>
+                    <button type="button" class="button-outline buttonClose">Close</button>
+                </div>
+            </div>
+        </div>
+        <div class="orderPlacementResponseDiv" style="text-align: left;">
+            <div class="loadingSpinner">
+                <div class="spinner-icon"></div>
+            </div>
+            <span class="responseMessage">Successfully</span>
+        </div>
+    </div>
+</div>

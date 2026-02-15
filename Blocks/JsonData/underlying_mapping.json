@@ -1,0 +1,90 @@
+{
+    "Kotak": [
+        {
+            "InstrumentToken": "Nifty 50",
+            "Name": "NIFTY 50",
+            "FoName": "NIFTY",
+            "FreezeLimit": 1800,
+            "Exchange": "nse_cm"
+        },
+        {
+            "InstrumentToken": "SENSEX",
+            "Name": "SENSEX",
+            "FoName": "SENSEX",
+            "FreezeLimit": 1000,
+            "Exchange": "bse_cm"
+        },
+        {
+            "InstrumentToken": "Nifty Bank",
+            "Name": "NIFTY BANK",
+            "FoName": "BANKNIFTY",
+            "FreezeLimit": 600,
+            "Exchange": "nse_cm"
+        },
+        {
+            "InstrumentToken": "Nifty Fin Service",
+            "Name": "NIFTY FIN SERVICE",
+            "FoName": "FINNIFTY",
+            "FreezeLimit": 1200,
+            "Exchange": "nse_cm"
+        },
+        {
+            "InstrumentToken": "NIFTY MID SELECT",
+            "Name": "NIFTY MID SELECT",
+            "FoName": "MIDCPNIFTY",
+            "FreezeLimit": 2800,
+            "Exchange": "nse_cm"
+        },
+        {
+            "InstrumentToken": "BANKEX",
+            "Name": "BANKEX",
+            "FoName": "BANKEX",
+            "FreezeLimit": 900,
+            "Exchange": "bse_cm"
+        }
+    ],
+    "Jainam": [
+        {
+            "InstrumentToken": "26000",
+            "Name": "NIFTY 50",
+            "FoName": "NIFTY",
+            "FreezeLimit": 1800,
+            "Exchange": "NSE"
+        },
+        {
+            "InstrumentToken": "1",
+            "Name": "SENSEX",
+            "FoName": "SENSEX",
+            "FreezeLimit": 1000,
+            "Exchange": "BSE"
+        },
+        {
+            "InstrumentToken": "26009",
+            "Name": "NIFTY BANK",
+            "FoName": "BANKNIFTY",
+            "FreezeLimit": 600,
+            "Exchange": "NSE"
+        },
+        {
+            "InstrumentToken": "26037",
+            "Name": "NIFTY FIN SERVICE",
+            "FoName": "FINNIFTY",
+            "FreezeLimit": 1200,
+            "Exchange": "NSE"
+        },
+        {
+            "InstrumentToken": "26074",
+            "Name": "NIFTY MID SELECT",
+            "FoName": "MIDCPNIFTY",
+            "FreezeLimit": 2800,
+            "Exchange": "NSE"
+        },
+        {
+            "InstrumentToken": "12",
+            "Name": "BANKEX",
+            "FoName": "BANKEX",
+            "FreezeLimit": 900,
+            "Exchange": "BSE"
+        }
+    ]
+}

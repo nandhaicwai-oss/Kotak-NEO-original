@@ -1,0 +1,272 @@
+[
+    {
+        "symbol": "SILVERM",
+        "mcxMultiplier": "5",
+        "tradeUnits": "KGS",
+        "hasOptions": true
+    },
+    {
+        "symbol": "MCXBULLDEX",
+        "mcxMultiplier": "30",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "GOLDM",
+        "mcxMultiplier": "10",
+        "tradeUnits": "GRMS",
+        "hasOptions": true
+    },
+    {
+        "symbol": "SILVER",
+        "mcxMultiplier": "30",
+        "tradeUnits": "KGS",
+        "hasOptions": true
+    },
+    {
+        "symbol": "GOLD",
+        "mcxMultiplier": "100",
+        "tradeUnits": "KGS",
+        "hasOptions": true
+    },
+    {
+        "symbol": "COPPER",
+        "mcxMultiplier": "2500",
+        "tradeUnits": "KGS",
+        "hasOptions": true
+    },
+    {
+        "symbol": "NATURALGAS",
+        "mcxMultiplier": "1250",
+        "tradeUnits": "mmBtu",
+        "hasOptions": true
+    },
+    {
+        "symbol": "ZINC",
+        "mcxMultiplier": "5",
+        "tradeUnits": "MT",
+        "hasOptions": true
+    },
+    {
+        "symbol": "NATGASMINI",
+        "mcxMultiplier": "250",
+        "tradeUnits": "mmBtu",
+        "hasOptions": true
+    },
+    {
+        "symbol": "GOLDTEN",
+        "mcxMultiplier": "10",
+        "tradeUnits": "GRMS",
+        "hasOptions": false
+    },
+    {
+        "symbol": "CRUDEOIL",
+        "mcxMultiplier": "100",
+        "tradeUnits": "BBL",
+        "hasOptions": true
+    },
+    {
+        "symbol": "CRUDEOILM",
+        "mcxMultiplier": "10",
+        "tradeUnits": "BBL",
+        "hasOptions": true
+    },
+    {
+        "symbol": "LEAD",
+        "mcxMultiplier": "5",
+        "tradeUnits": "MT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MENTHAOIL",
+        "mcxMultiplier": "360",
+        "tradeUnits": "KGS",
+        "hasOptions": false
+    },
+    {
+        "symbol": "CARDAMOM",
+        "mcxMultiplier": "100",
+        "tradeUnits": "KGS",
+        "hasOptions": false
+    },
+    {
+        "symbol": "NICKEL",
+        "mcxMultiplier": "250",
+        "tradeUnits": "KGS",
+        "hasOptions": false
+    },
+    {
+        "symbol": "GOLDGUINEA",
+        "mcxMultiplier": "8",
+        "tradeUnits": "GRMS",
+        "hasOptions": false
+    },
+    {
+        "symbol": "COTTONOIL",
+        "mcxMultiplier": "5",
+        "tradeUnits": "MT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "ALUMINI",
+        "mcxMultiplier": "1",
+        "tradeUnits": "MT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "LEADMINI",
+        "mcxMultiplier": "1",
+        "tradeUnits": "MT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "STEELREBAR",
+        "mcxMultiplier": "5",
+        "tradeUnits": "MT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "COTTON",
+        "mcxMultiplier": "25",
+        "tradeUnits": "BALES",
+        "hasOptions": false
+    },
+    {
+        "symbol": "COTTONREF",
+        "mcxMultiplier": "25",
+        "tradeUnits": "BALES",
+        "hasOptions": false
+    },
+    {
+        "symbol": "SILVERMIC",
+        "mcxMultiplier": "1",
+        "tradeUnits": "KGS",
+        "hasOptions": false
+    },
+    {
+        "symbol": "KAPAS",
+        "mcxMultiplier": "4",
+        "tradeUnits": "MT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXMETLDEX",
+        "mcxMultiplier": "50",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXENRGDEX",
+        "mcxMultiplier": "125",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "COPPERM",
+        "mcxMultiplier": "250",
+        "tradeUnits": "KGS",
+        "hasOptions": false
+    },
+    {
+        "symbol": "ALUMINIUM",
+        "mcxMultiplier": "5",
+        "tradeUnits": "MT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "GOLDPETAL",
+        "mcxMultiplier": "1",
+        "tradeUnits": "GRMS",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXALUMDEX",
+        "mcxMultiplier": "1",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "ELECDMBL",
+        "mcxMultiplier": "50",
+        "tradeUnits": "MWH",
+        "hasOptions": false
+    },
+    {
+        "symbol": "ZINCMINI",
+        "mcxMultiplier": "1",
+        "tradeUnits": "MT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "CPO",
+        "mcxMultiplier": "10",
+        "tradeUnits": "MT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXSILVDEX",
+        "mcxMultiplier": "1",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXZINCDEX",
+        "mcxMultiplier": "1",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXCRUDEX",
+        "mcxMultiplier": "1",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "RUBBER",
+        "mcxMultiplier": "1",
+        "tradeUnits": "MT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "NICKELM",
+        "mcxMultiplier": "100",
+        "tradeUnits": "KGS",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXCOMPDEX",
+        "mcxMultiplier": "1",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "COTTONCNDY",
+        "mcxMultiplier": "12",
+        "tradeUnits": "CANDY",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXLEADEX",
+        "mcxMultiplier": "1",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXCOPRDEX",
+        "mcxMultiplier": "1",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXNGASDEX",
+        "mcxMultiplier": "1",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    },
+    {
+        "symbol": "MCXGOLDEX",
+        "mcxMultiplier": "1",
+        "tradeUnits": "UNIT",
+        "hasOptions": false
+    }
+]

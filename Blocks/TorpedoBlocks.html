@@ -1,0 +1,572 @@
+<!-- torpedoRootStart -->
+<div id="torpedoBG"></div>
+<div class="k-notification-container" id="kNotificationContainer"></div>
+<div id="torpedoApp">
+    <div class="tApp page-positions">
+        <div class="stickyRightBtn">
+            <div id="stickyRightDiv" data-balloon="Show Tiled Window" data-balloon-pos="left" style="display: block;">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+        </div>
+        <div class="topMenuBar">
+            <div class="topLeftMenu">
+                <span class="topLeftExitBtn hoverBtn">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </span>
+            </div>
+            <div class="indicesPriceParent">
+                <div class="indicesPriceSet">
+                    <div class="indicesNameRow" kt-tooltip="Show day's low & high">NIFTY</div>
+                    <div class="indicesPriceRow" kt-tooltip="Buy or sell Future">
+                        <div class="indicesPrice">-</div>
+                        <div class="indicesChange dim">-</div>
+                        <div class="indicesChangePercent dim">-</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="topRightMenu" style="margin: 0em 2em;">
+                
+                <div>
+                    <span></span>
+                    
+                    
+                    <div class="invalidSession topRightLoginBtn user-btn">
+                        <span> <i class="fa-solid fa-right-to-bracket"></i> </span>
+                        <span>Login Neo API</span>
+                    </div>
+
+                    <div class="user-menu">
+                        <div class="validSession topRightLoginBtn user-btn" style="background-color: #0a7e52;">
+                            <span>Neo API Running</span>
+                            <i class="fa-solid fa-circle-check" style="font-size: 1.2em;"></i>
+                        </div>
+                        
+                        <div class="dropdown">
+                            <div class="topRightUserIdInfo">Settings</div>
+                            <div class="topRightLogoutBtn">Logout Neo API</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="leftContainer container">
+
+            <div class="watchListChain">
+                <div class="watchListParent">
+                    <div class="watchListSubPart1 watchListSubPart"></div>
+                    <div class="straddleIVSection">
+
+                    </div>
+                    <div class="watchListPool" style="display: none;"></div>
+                    <div class="watchListOptionSetParent">
+                        <div class="watchListOptionSetContainer">
+                            <div class="watchListOptionSet">
+                                <div class="rowTitle">Total Strikes</div>
+                                
+                                <div class="rowStrike rowUpDown totalStrikeCustomSelector">
+                                    <i class="fa-solid fa-circle-minus strikeDown"></i>
+                                    <span>10</span>
+                                    <i class="fa-solid fa-circle-plus strikeUp"></i>
+                                </div>
+                            </div>
+
+
+                            <div class="watchListOptionSet">
+                                <div class="rowTitle">ITM Strikes</div>
+                                <div class="rowStrike rowUpDown itmStrikeCustomSelector">
+                                    <i class="fa-solid fa-circle-minus strikeDown"></i>
+                                    <span>10</span>
+                                    <i class="fa-solid fa-circle-plus strikeUp"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="floatingHeader">
+                            <span class="floatingToggle">
+                                <i class="fa-solid fa-circle-chevron-down downArrowBtn hoverBtn"
+                                    style="display: none;"></i>
+                                <i class="fa-solid fa-circle-chevron-up upArrowBtn hoverBtn"
+                                    style="display: block;"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="watchListSubPart2 watchListSubPart"></div>
+                </div>
+                <div class="customWatchListParent">
+                    <div class="CustomwatchListSearchParent">
+                        <div class="searchParentDiv">
+                            <i class="fa-solid fa-magnifying-glass searchButtonSymbol" style="margin: 0 0.15em;"></i>
+                            <div class="basketSearchDiv" style="display: flex;flex-direction: column;flex-basis: 80%;">
+                                <input type="text" autocorrect="off" name="searchInputWatchList" autocomplete="off" />
+                                <div class="ulParentDiv">
+                                    <ul></ul>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="fa-regular fa-circle-xmark searchClose"></i>
+                            </div>
+                        </div>
+                        <div class="watchListInfo">
+                            Stocks
+                        </div>
+                    </div>
+                    <div class="customWatchListPart"></div>
+
+                    <div id="watchListRowActionBar">
+                        <div class="watchListActionBtn buyActionBtn">B</div>
+                        <div class="watchListActionBtn sellActionBtn">S</div>
+                        <div class="watchListActionBtn deleteActionBtn">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="watchListSelectorParent">
+                    <div class="watchListSelector" data-id="0">1</div>
+                    <div class="watchListSelector" data-id="1">2</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="centerContainer container">
+            <div class="noPositionSection">
+                <div class="noOrderSectionHeader" style="font-size: 2em;">No Positions</div>
+                <div class="noOrderSectionContent">You don't have any positions</div>
+            </div>
+            <div class="positionParent" style="display: none;">
+                <div class="sectionHeader">
+                    <header class="row data-table-header">
+                        <h3 class="page-title small" kt-tooltip="Fetch Positions"> Positions <span
+                                class="count">(2)</span>
+                        </h3>
+                    </header>
+                    <div class="positionToolbar">
+                        <div class="groupViewSettingParent">
+                            <div style="z-index: 26;position: relative;cursor: pointer;">
+                                <Span>
+                                    <i id="groupViewSettingBtn" class="fa-solid fa-gears"></i>
+                                    <span style="font-size: 1.3em;margin:0em 0.3em;">Group Settings</span>
+                                </Span>
+                            </div>
+
+                            <div class="groupViewSettingDropdownContainer">
+                                <div class="groupViewSettingDropdown">
+                                    <div class="groupViewSettingSetParent">
+                                        <div class="groupViewSettingSet">
+                                            <div class="groupViewSettingHeader">
+                                                GroupView
+                                            </div>
+                                            <div class="groupViewSettingValue sliderF">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="idPrefPositionGroupOption"
+                                                        style="display: none;" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="groupViewSettingSet gorupViewDependSetting">
+                                            <div class="groupViewSettingHeader"
+                                                kt-tooltip="If enabled positions will be grouped by expiry">
+                                                <div class="subHeaderText"> Group By Expiry </div>
+                                            </div>
+                                            <div class="groupViewSettingValue sliderF">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="idPrefGroupExpiryWise"
+                                                        style="display: none;" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="groupViewSettingSet gorupViewDependSetting">
+                                            <div class="groupViewSettingHeader sliderF"
+                                                kt-tooltip="Enable or Disable Call Put premium and profit info for position groups">
+                                                <div class="subHeaderText"> Call-Put Info</div>
+                                            </div>
+                                            <div class="groupViewSettingValue sliderF">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="idPrefGroupViewCallPutInfo"
+                                                        style="display: none;" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="groupViewSettingSet gorupViewDependSetting">
+                                            <div class="groupViewSettingHeader"
+                                                kt-tooltip="Enable or Disable Straddle-IV Info and margin info for position groups">
+                                                <div class="subHeaderText"> Straddle-IV Info</div>
+                                            </div>
+                                            <div class="groupViewSettingValue sliderF">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="idPrefGroupViewStraddleInfo"
+                                                        style="display: none;" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="groupViewSettingSet">
+                                            <div class="groupViewSettingHeader"
+                                                kt-tooltip="Show option greeks for each positions">Position
+                                                Greeks </div>
+
+                                            <div class="groupViewSettingValue sliderF">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="idPrefPositoinGreeks"
+                                                        style="display: none;" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="data-table open-positions" id="tPositionsParent">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="1" class="product sortable"><span> </span></th>
+                                <th colspan="1" class="product sortable"><span> Product </span></th>
+                                <th colspan="1" class="instrument sortable"><span> Instrument </span></th>
+                                <th colspan="1" class="quantity right sortable"><span> Qty. </span></th>
+                                <th colspan="1" class="average-price right sortable"><span> Avg. </span></th>
+                                <th colspan="1" class="last-price right dynamicNumber sortable"><span> LTP </span>
+                                </th>
+                                <th colspan="1" class="pnl right dynamicNumber sortable"><span> P&amp;L </span></th>
+                                <th colspan="1" class="change-percent right dynamicNumber sortable"><span> Chg.
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="tradingview-widget-container">
+
+            </div>
+
+        </div>
+        <div class="rightContainer container">
+            <div class="noOrderSection">
+                <div class="noOrderSectionHeader" style="font-size: 2em;">No Orders</div>
+                <div class="noOrderSectionContent">You haven't placed any orders</div>
+            </div>
+            <div class="orderSetParent" style="display: none;">
+                <div class="openOrdersParent ordersParent">
+                    <div class="sectionHeader">
+                        <header class="row data-table-header">
+                            <h3 class="page-title small" kt-tooltip="Fetch Orders"> Open Orders <span
+                                    class="count">(2)</span>
+                            </h3>
+                        </header>
+                    </div>
+                    <div class="openOrders data-table">
+
+                    </div>
+                </div>
+                <div class="triggerOrdersParent ordersParent">
+                    <div class="sectionHeader">
+                        <header class="row data-table-header">
+                            <h3 class="page-title small" kt-tooltip="Fetch Orders"> Trigger Orders <span
+                                    class="count">(2)</span>
+                            </h3>
+                        </header>
+                    </div>
+                    <div class="triggerOrders data-table">
+
+                    </div>
+                </div>
+                <div class="completeOrdersParent ordersParent">
+                    <div class="sectionHeader">
+                        <header class="row data-table-header">
+                            <h3 class="page-title small" kt-tooltip="Fetch Orders"> Executed Orders <span
+                                    class="count">(2)</span>
+                            </h3>
+                        </header>
+                    </div>
+                    <div class="completeOrders data-table">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- torpedoRootEnd -->
+
+<!-- torpedoGroupHeaderRowStart -->
+
+<!-- torpedoGroupHeaderRowEnd -->
+
+
+<!-- torpedoMarketDepthRowStart -->
+<tr class="just-added">
+    <td class="depthPrice">15</td>
+    <td class="depthQuantity">1000</td>
+</tr>
+<!-- torpedoMarketDepthRowEnd -->
+
+<!-- torpedoWatchListRowStart -->
+<div class="just-added watchListRow">
+    <div class="watchlistRowHandle"><i class="fa-solid fa-grip-vertical"></i></div>
+    <div class="watchList_strike"></div>
+    
+    <div class="watchList_change"></div>
+    <i class="changeDirection fa-solid fa-caret-up"></i>
+    <div class="watchList_ltp"></div>
+</div>
+<!-- torpedoWatchListRowEnd -->
+
+<!-- torpedoTopStaticSectionStart -->
+
+<div class="stickyTopCenterParent">
+    <div class="appShowBtnParent">
+        <div class="appShowBtnBorder"></div>
+        <i class="fa-solid fa-arrow-up appShowBtn showBtn" kt-tooltip="Open Terminal Window"></i>
+        <i class=" fa-solid fa-xmark appShowBtn hideBtn" kt-tooltip="Hide Terminal Window"></i>
+    </div>
+</div>
+<!-- torpedoTopStaticSectionEnd -->
+
+<!-- torpedoPositionRowStart -->
+<tr class="just-added">
+    <td class="select-cell">
+        <div class="posUtilityParent">
+            <div class="su-checkbox-group"><input id="position.12592898.NRML0" type="checkbox" class="su-checkbox">
+                <label for="position.12592898.NRML0" class="su-checkbox-label"><span class="su-checkbox-box"><span
+                            class="su-checkbox-tick"></span></span></label>
+            </div>
+            <div class="posUtility">
+
+                <div class="posBasketUtility" style="visibility: visible;">
+                    <a kt-tooltip="Move strike to a different strike with the basket">
+                        <i class="fa-regular fa-pen-to-square hoverBtn positionEdit"></i>
+                    </a>
+                </div>
+                <div class="posDefaultUtility">
+                    <div>
+                        <a class="positionAdd" kt-tooltip="Add quantities">
+                            <i class="fa-solid hoverBtn fa-plus" style="color: #478032;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+    <td data-label="Product" data-fold-width-full="" data-fold-flex-between="" class="open product"><span
+            class="text-label small aqua span-text-right indigo">
+            NRML
+        </span></td>
+    <td data-label="Instrument" class="open instrument"><span></span> </td>
+    <td data-label="Qty." class="open quantity right"><span class="span-text-right"></span></td>
+    <td data-label="Avg." class="open average-price right"><span class="span-text-right"></span></td>
+    <td data-label="LTP" class="open last-price right"><span class="span-text-right"></span></td>
+    <td data-label="P&amp;L" class="open pnl right"><span class="span-text-right"></span></td>
+    <td data-label="Chg." class="open change-percent change-percent right"><span class="span-text-right"></span>
+    </td>
+</tr>
+<!-- torpedoPositionRowEnd -->
+
+<!-- torpedoOrdersTableStart -->
+<table>
+    <thead>
+        <tr>
+
+            <th colspan="1" class="order-timestamp sortable"><span data-tooltip-placement="top">
+                    Time
+                </span></th>
+            <th colspan="1" class="transaction-type sortable"><span data-tooltip-placement="top">
+
+                </span></th>
+            <th colspan="1" class="instrument sortable"><span data-tooltip-placement="top">
+                    Instrument
+                </span></th>
+            <th colspan="1" class="product sortable"><span data-tooltip-placement="top">
+
+                </span></th>
+            <th colspan="1" class="quantity right sortable"><span data-tooltip-placement="top">
+                    Qty.
+                </span></th>
+            <th colspan="1" class="last-price right sortable"><span data-tooltip-placement="top">
+                    LTP
+                </span></th>
+            <th colspan="1" class="average-price right sortable"><span data-tooltip-placement="top">
+                    Avg.
+                </span></th>
+            <th colspan="1" class="trigger-price right sortable" style="display: none;"><span
+                    data-tooltip-placement="top">
+                    Trigger Price
+                </span></th>
+            <th colspan="1" class="order-status right sortable"><span data-tooltip-placement="top">
+                    Status
+                </span></th>
+            <th colspan="1" class="col-menu"><span data-tooltip-placement="top"> </span></th>
+            <th colspan="1" class="cancelOrderHeader col-menu"><span data-tooltip-placement="top"> </span></th>
+
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<!-- torpedoOrdersTableEnd -->
+
+
+<!-- torpedoOrdersRowStart -->
+<tr class="just-added">
+    <td class="order-timestamp"><span></span></td>
+    <td class="transaction-type"><span class="text-label red">SELL</span></td>
+    <td class="instrument"><span></span></td>
+    <td class="productType"><span class="text-label small aqua span-text-right indigo">NRML</span></td>
+    <td class="quantity right">
+        0 / 75
+    </td>
+    <td class="last-price right"><span>N/A</span></td>
+    <td class="average-price right"><span>
+            20.00
+        </span></td>
+    <td class="trigger-price right"><span>
+            0
+        </span></td>
+    <td class="order-status right"> <span no-delay="" data-tooltip-placement="top" data-tooltip-no-delay=""
+            style="display: none;"><span class="icon icon-alert-triangle text-red status-message-info"></span></span>
+        <span class="text-label small order-status-label"><span>OPEN</span></span>
+    </td>
+    <td class="cancel-order right">
+        <span>
+            <i class="fa-solid fa-circle-xmark"></i>
+        </span>
+    </td>
+</tr>
+<!-- torpedoOrdersRowEnd -->
+
+<!-- torpedoNotificationStart -->
+<div class="k-notification just-added">
+    <div class="leftNotificationBar"></div>
+    <span class="k-close-btn">×</span>
+    <div class="k-header">Success</div>
+    <div class="k-message">Your order was placed successfully!</div>
+</div>
+<!-- torpedoNotificationEnd -->
+
+
+<!-- marketDepthWindowStart -->
+<div class="modal-container layer-2 sliderF">
+    <div class="depthTopBar">
+        <i class="fa-solid fa-xmark hoverBtn closeBtn" style="font-size: 1.3em;"></i>
+    </div>
+    <div class="depthHeaderInfo">
+        <div class="symbolHeaderName">NIFTY</div>
+        <div class="row">
+            <span class="symbolPrice">25450</span><span class="symbolChange">-116</span>
+        </div>
+    </div>
+    <div class="depthSubInfoRow">
+        <div class="depthSubColumn">
+            <div class="subInfoHeader">Open</div>
+            <div class="depthsubInfo instOpenValue">25500</div>
+        </div>
+        <div class="depthSubColumn">
+            <div class="subInfoHeader">Prev. Close</div>
+            <div class="depthsubInfo instCloseValue">25500</div>
+        </div>
+        <div class="depthSubColumn">
+            <div class="subInfoHeader">Low</div>
+            <div class="depthsubInfo instLowValue">25500</div>
+        </div>
+        <div class="depthSubColumn">
+            <div class="subInfoHeader">High</div>
+            <div class="depthsubInfo instHighValue">25500</div>
+        </div>
+    </div>
+</div>
+<!-- marketDepthWindowEnd -->
+
+<!-- neoTradeAuthWindowStart -->
+<div class="neoAuthWindowBG"></div>
+<div class="neoTradeAuthContainer">
+    <div class="neoTradeAuthWindow sliderF">
+        <div class="loginLogoHeader">
+            <img class="appLogo" style="width: 2em;"></img>
+            <div class='logoDiv'>
+                <div class='firstAppText'>KITE</div>
+                <div class='secondAppText'>PLUS</div>
+                <div class='thirdAppText'></div>
+            </div>
+        </div>
+        <div class="loginInputParent">
+            <div class="loginInputRow">
+                <div class="loginInputHeader ">Client Code</div>
+                <input name="neoTradeAuthClientCode" autocomplete="off" placeholder="XXXXX" autocomplete="off"
+                    class="loginInput neoTradeAuthClientCode" />
+            </div>
+            <div class="loginInputRow">
+                <div class="loginInputHeader ">Mobile Number</div>
+                <input name="neoTradeAuthMobileNumber" autocomplete="off" placeholder="+91XXXXXXXXXX"
+                    class="loginInput neoTradeAuthMobileNumber" />
+            </div>
+            <div class="loginInputRow">
+                <div class="loginInputHeader">API Access Token</div>
+                <input name="neoTradeAuthTokenInput" autocomplete="off" class="loginInput neoTradeAuthTokenInput" />
+            </div>
+            <div class="loginInputRow">
+                <div class="loginInputHeader ">M-PIN</div>
+                <input name="neoTradeAuthTotp" type="password" autocomplete="off" inputmode="numeric" pattern="[0-9]*"
+                    class="loginInput neoTradeAuthMpin" />
+            </div>
+            <div class="loginInputRow">
+                <div class="loginInputHeader ">TOTP QR Key</div>
+                <input name="neoTradeQrKey" placeholder="optional for auto TOTP" autocomplete="off"
+                    class="loginInput neoTradeQrKey" />
+            </div>
+            <div class="loginInputRow">
+                <div class="loginInputHeader ">TOTP</div>
+                <input name="neoTradeAuthTotp" autocomplete="off" class="loginInput neoTradeAuthTotp" />
+            </div>
+
+        </div>
+        <div class="loginInputRow">
+            <div class="loginInputHeader "></div>
+            <div class="loginInputValue hoverBtn getTotpBtn">Fetch TOTP</div>
+        </div>
+        <div class="loginInputFooter">
+            <div style="flex-basis: 30%;">
+
+            </div>
+            <div style="flex-basis: 70%;display: flex;gap:2em;">
+                <div class="loginInputBtn neoTradeSubmit">
+                    <span> <i class="fa-solid fa-right-to-bracket"></i> </span>
+                    <span>Login</span>
+                </div>
+                <div class="loginInputBtn neoTradeClose">Close</div>
+            </div>
+
+        </div>
+        <div class="loginInputWarningFooter">
+            <div class="loadingSpinner">
+                <div class="spinner-icon"></div>
+            </div>
+            <div class="loginInputWarningMessage"></div>
+
+        </div>
+        <div class="loginInputFooterInstructions"
+            style="color: #444444;font-weight: bold;font-size: 0.85em;text-align: center;">
+            <div>
+                <div class="loginInputInformation">After logging in, all orders will be placed
+                    through the Neo Trade Free API.
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- neoTradeAuthWindowEnd -->

@@ -1,0 +1,904 @@
+<!-- fontAwesomeLinkStart -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- fontAwesomeLinkEnd -->
+
+<!-- chartAttrStart -->
+<div class="lw-attribution">
+  autoautoauto
+  
+  <a href="https://tradingview.github.io/lightweight-charts/">Powered by Lightweight Charts™</a>
+</div>
+<!-- chartAttrEnd -->;
+
+<!-- chartButtonsStart -->
+<div class="chartControlDiv">
+  <div id="chartHederLeftDiv">
+    <span id="chartHeader">
+      MTM Chart<a href="https://kiteplus.radiuscraft.com/" target="_blank"><span
+          class="brandLink">radiuscraft.com</span></a>
+    </span>
+    
+    
+    
+  </div>
+  <div id="chartControlSet" class="sliderF">
+    <div class="chartButtons">
+      <div class="chartToggleLabel">Time</div>
+      <select name="mtmChartTimeFrameSelect" class="mtmChartTimeFrameSelect timeFrameSelect">
+        <option value="1">1m</option>
+        <option value="2">2m</option>
+        <option value="3">3m</option>
+        <option value="5">5m</option>
+        <option value="15">15m</option>
+        <option value="30">30m</option>
+      </select>
+      <div id="roiMarginAmountParent" class="chartButtons"
+        style="display: flex; justify-content: center; flex-direction: row; align-items: center;">
+        <div class="chartToggleLabel">Margin</div>
+        <input id="roiMarginAmount" type="number" />
+      </div>
+    </div>
+    <div class="chartButtons">
+      <div class="chartToggleLabel">Show ROI</div>
+      <label class="switch">
+        <input type="checkbox" id="chartROICheckbox" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="chartButtons">
+      <div class="chartToggleLabel">High/Low</div>
+      <label class="switch">
+        <input type="checkbox" id="chartHighLowCheckbox" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="chartButtons">
+      <div class="chartToggleLabel">Index Price</div>
+      <label class="switch">
+        <input type="checkbox" id="chartSpotCheckbox" />
+        <span class="slider round"></span>
+      </label>
+      <select name="spotSymbol" class="mtmSpotSelector"></select>
+    </div>
+    <div class="chartButtons">
+      <div class="chartToggleLabel">Candles</div>
+      <label class="switch">
+        <input type="checkbox" id="chartCandleCheckbox" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="chartButtons">
+      <div class="chartToggleLabel">Lines</div>
+      <label class="switch">
+        <input type="checkbox" id="chartLinesCheckbox" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <a id="chartSave" class="chartButtons" data-balloon="Save Image" data-balloon-pos="down"> <i class="fa fa-save"
+        aria-hidden="true"></i></a>
+    <a id="chartSaveCSV" class="chartButtons secondaryChartButtons" data-balloon="Download CSV" data-balloon-pos="down">
+      <i class="fa-solid fa-file-csv"></i></a>
+
+    <a id="chartMaxButton" class="chartButtons" data-balloon="Maximize" data-balloon-pos="down">
+      <i class="fa-solid fa-expand"></i>
+    </a>
+    <a id="chartMinButton" class="chartButtons" data-balloon="Minimize" data-balloon-pos="down">
+      <i class="fa-solid fa-compress"></i>
+      
+    </a>
+    <a id="chartCloseButton" class="chartButtons" data-balloon="Close" data-balloon-pos="down">
+      <i class="fa-solid fa-xmark"></i>
+      
+    </a>
+  </div>
+  <div class="chatControlRightButtonSet">
+    <a class="chartButtons chartShowButton" data-balloon="Close" data-balloon-pos="down">
+      <i class="fa-solid fa-circle-chevron-down"></i>
+    </a>
+  </div>
+</div>
+<div id="lightWeightChartParent">
+  <div class="chartIndexMetaFooterParent">
+    <div class="chartIndexMetaFooter">
+      <a id="mtmChartZoomOut" class="chartButtons" data-balloon="Zoom Out" data-balloon-pos="down">
+        <i class="fa-solid fa-magnifying-glass-minus"></i>
+      </a>
+      <a id="mtmChartZoomIn" class="chartButtons" data-balloon="Zoom In" data-balloon-pos="down">
+        <i class="fa-solid fa-magnifying-glass-plus"></i>
+      </a>
+      <a id="mtmChartResetButton" class="chartButtons" data-balloon="Fit/Reset" data-balloon-pos="down">
+        <i class="fa-solid fa-arrows-rotate"></i>
+      </a>
+    </div>
+    <div class="kitePlusWaterMark">
+      NeoPlus For Kotak
+    </div>
+  </div>
+</div>
+<!-- chartButtonsEnd -->
+
+<!-- chartIndexMetaButtonsStart -->
+<div class="chartControlDiv">
+  <div id="chartHederIndexMetaLeftDiv">
+    <span id="chartHeaderIndexMeta">
+      ATM Chart<a href="https://kiteplus.radiuscraft.com/" target="_blank"><span
+          class="brandLink">radiuscraft.com</span></a>
+    </span>
+    
+    
+    
+  </div>
+  <div id="chartIndexMetaControlSet" class="sliderF">
+    <div class="chartButtons">
+      <div class="chartToggleLabel">Time</div>
+      <select name="atmChartTimeFrameSelect" class="atmChartTimeFrameSelect timeFrameSelect">
+        <option value="1">1m</option>
+        <option value="2">2m</option>
+        <option value="3">3m</option>
+        <option value="5">5m</option>
+        <option value="15">15m</option>
+        <option value="30">30m</option>
+      </select>
+
+    </div>
+
+    <select name="optionChainType" class="indexMetaSymbolSelect"></select>
+    <div class="indexMetaToggleParent">
+      <div class="indexMetaToggleLabel">Spot Chart</div>
+      <label class="switch">
+        <input type="checkbox" id="indexMetaSpotToggle" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="indexMetaToggleParent">
+      <div class="indexMetaToggleLabel">Straddle Chart</div>
+      <label class="switch">
+        <input type="checkbox" id="indexMetaStraddleToggle" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="indexMetaToggleParent">
+      <div class="indexMetaToggleLabel">IV Chart</div>
+      <label class="switch">
+        <input type="checkbox" id="indexMetaIvToggle" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    
+  </div>
+  <div class="chatControlRightButtonSet">
+    <a id="chartIndexMetaMaxButton" class="chartButtons" data-balloon="Full Screen" data-balloon-pos="down">
+      <i class="fa-solid fa-expand"></i>
+    </a>
+    <a id="chartIndexMetaMinButton" class="chartButtons" data-balloon="Minimize" data-balloon-pos="down">
+      <i class="fa-solid fa-compress"></i>
+      
+    </a>
+    <a id="chartIndexMetaCloseButton" class="chartButtons" data-balloon="Close" data-balloon-pos="down">
+      <i class="fa-solid fa-xmark"></i>
+      
+    </a>
+    <a class="chartButtons chartShowButton" data-balloon="Close" data-balloon-pos="down">
+      <i class="fa-solid fa-circle-chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+<div class="lightWeightChartContainer">
+  <div class="chartAxis">
+    <span class="leftChartAxisSpan" id="ivSpotLabel">ATM IV</span>
+  </div>
+  <div id="lightWeightChartIndexMetaParent">
+    <div class="chartIndexMetaFooterParent">
+      <div class="chartIndexMetaFooter">
+        <a id="chartIndexMetaZoomOut" class="chartButtons" data-balloon="Zoom Out" data-balloon-pos="down">
+          <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </a>
+        <a id="chartIndexMetaZoomIn" class="chartButtons" data-balloon="Zoom In" data-balloon-pos="down">
+          <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </a>
+        <a id="chartIndexMetaResetButton" class="chartButtons" data-balloon="Fit/Reset" data-balloon-pos="down">
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="chartAxis rightChartAxis">
+    <span class="rightChartAxisSpan"> Straddle Price</span>
+  </div>
+</div>
+<!-- chartIndexMetaButtonsEnd -->
+
+<!-- lockFrameStart -->
+<a href="https://kiteplus.radiuscraft.com/#pricing" target="_blank" class="lockSpan kitePricingLink"
+  data-balloon="Get Subscription" data-balloon-pos="up">
+  <span><i class="fa-solid fa-lock" style="font-size: 15px;margin-left: 2px; color: #ff0039"></i> </span>
+</a>
+
+<!-- lockFrameEnd -->
+
+<!-- indexMetaDataStart -->
+<div id="indexMetaDataWindow">
+  <div class="searchParentDiv">
+    <i class="fa-solid fa-magnifying-glass searchButtonSymbol" style="margin: 0 0.15em;"></i>
+    <div class="basketSearchDiv" style="display: flex;flex-direction: column;">
+      <input type="text" autocorrect="off" name="searchInputWatchList" autocomplete="off" />
+      <div class="ulParentDiv">
+        <ul></ul>
+      </div>
+    </div>
+    <div>
+      <i class="fa-regular fa-circle-xmark searchClose"></i>
+    </div>
+    <div class="row indexPriceRow" kt-tooltip="Click to buy or sell Future"><span class="indexPrice">N/A</span><span
+        class="indexChange">N/A</span></div>
+    
+  </div>
+  <div class="indexMetaDataBody">
+    <div class="indexMetaDataBodyColumn">
+      <div class="indexMetaDataInfoRow">
+        <div class="rowTitle">Expiry</div>
+        <div class="su-select indexMetaExpiry rowValue">
+          <select></select>
+        </div>
+        
+      </div>
+      <div class="indexMetaDataInfoRow">
+        <div class="rowTitle">Synthetic FUT</div>
+        <div class="rowValue syntheticValue">N/A</div>
+      </div>
+      <div class="indexMetaDataInfoRow">
+        <div class="rowTitle">ATM Strike</div>
+        <div class="rowValue atmStrikeValue">N/A</div>
+      </div>
+
+      <div class="indexMetaDataInfoRow">
+        <div class="rowTitle">ATM IV</div>
+        <div class="rowValue atmIV">N/A</div>
+      </div>
+    </div>
+    <div class="indexMetaDataBodyColumn">
+      <div class="indexMetaDataInfoRow" kt-tooltip="Straddle price and its theta value">
+        <div class="rowTitle">Straddle Price</div>
+        <div class="rowValue straddleValue">
+          <span class="mainPart"></span>
+          <span class="subPart dim"></span>
+        </div>
+      </div>
+      <div class="indexMetaDataInfoRow" kt-tooltip="Call price and its theta value">
+        <div class="rowTitle">CE Price</div>
+        <div class="rowValue cePrice">
+          <span class="mainPart"></span>
+          <span class="subPart dim"></span>
+        </div>
+      </div>
+      <div class="indexMetaDataInfoRow" kt-tooltip="Put price and its theta value">
+        <div class="rowTitle">PE Price</div>
+        <div class="rowValue pePrice">
+          <span class="mainPart"></span>
+          <span class="subPart dim"></span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div class="floatingHeader">
+  <span class="floatingToggle">
+    <i class="fa-solid fa-circle-chevron-down downArrowBtn hoverBtn" style="display: block;"></i>
+    <i class="fa-solid fa-circle-chevron-up upArrowBtn hoverBtn" style="display: none;"></i>
+  </span>
+</div>
+<!-- indexMetaDataEnd -->
+
+<!-- floatingStopLossWarningWindowStart -->
+<div id="stopLossWarningWindowBG"></div>
+<div id="stopLossWarningWindow">
+  <div class="warningHeader">
+    <div></div>
+    <div class="kitePlusCenterAlign">Disclaimer</div>
+
+    <div class="kitePlusRightAlign" style="visibility: hidden;">
+      <i class="fa-solid floatingWarningCloseBtn fa-circle-xmark hoverBtn kitePlusDefaultTextColor"></i>
+    </div>
+  </div>
+  <div class="warningContent">
+    <ul></ul>
+  </div>
+  <div class="warningHeader">
+    <div></div>
+    <div class="kitePlusCenterAlign"></div>
+
+    <div class="kitePlusRightAlign">
+      <button type="button" class="button-blue buttonExecute">
+        <span class="executeButtonText">Agree</span>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- floatingStopLossWarningWindowEnd -->
+
+<!-- floatingStopLossWindowStart -->
+
+<div class="stopLossModal sliderF">
+  
+  <div class="floatingHeader">
+    <span class="floatingStopLossToggle">
+      <i class="fa-solid fa-circle-chevron-down downArrowBtn hoverBtn"></i>
+      <i class="fa-solid fa-circle-chevron-up upArrowBtn hoverBtn"></i>
+    </span>
+  </div>
+
+  <div class="floatingSecondHeader">
+    
+    <div>
+      <i style="display: none;"
+        class="fa-solid floatingWarningBtn fa-circle-info hoverBtn kitePlusDefaultTextColor"></i>
+    </div>
+    <div>
+      <i class="fa-solid fa-gear floatingSLSettingBtn hoverBtn kitePlusDefaultTextColor"></i>
+      
+    </div>
+  </div>
+
+  <div class="floatingColumnParent">
+    <div class="floatingColumn">
+      <div>
+        <div class="text-Negative floatingColumnHeader">Stoploss</div>
+        <input class="floatingSLInput" pattern="[0-9]{10}" autocorrect=" off" autocomplete="off" />
+      </div>
+      <div>
+        <label class="switch">
+          <input type="checkbox" id="floatingSLCheckbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+    <div class="floatingColumn" style="display: none;">
+      
+      <div id="floatingPL"></div>
+    </div>
+    <div class="floatingColumn">
+      <div>
+        <label class="switch">
+          <input type="checkbox" id="floatingTargetCheckbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div>
+        <div class="text-Positive floatingColumnHeader">Target</div>
+        <input class="floatingTargetInput" pattern="[0-9]{10}" autocorrect=" off" autocomplete="off" />
+      </div>
+    </div>
+  </div>
+  <div class="floatingFooter">
+    <span class="stopLossMessage">
+      
+    </span>
+  </div>
+  <div class="floatingSLSettingsParent">
+    <div class="floatingSettingClose">
+      <div></div>
+      <div class="kitePlusDefaultTextColor">Preferences</div>
+      <div>
+        <i class="fa-solid floatingSettingCloseBtn fa-circle-xmark hoverBtn kitePlusDefaultTextColor"></i>
+      </div>
+    </div>
+
+    <div class="floatingSLSetting">
+      <div class="settingTitleLabel">Only Exit Sell positions</div>
+      <label class="switch">
+        <input type="checkbox" id="floatingStopLossNoBuy" />
+        <span class="slider round"></span>
+      </label>
+      
+    </div>
+    <div class="floatingSLSetting">
+      <div class="settingTitleLabel">Only Exit F&O Positions</div>
+      <label class="switch">
+        <input type="checkbox" id="floatingStopLossNoEquity" />
+        <span class="slider round"></span>
+      </label>
+      
+    </div>
+  </div>
+</div>
+
+<!-- floatingStopLossWindowEnd -->
+
+<!-- floatingPriceWindowStart -->
+<div class="modal-container layer-2 sliderF">
+  <table>
+    <tbody>
+      <tr class="floatingRow">
+        <td class="floatingStatusTD"><span class="floatingStatus">E</span></td>
+        <td class="floatingSymbol"></td>
+        <td class="floatingPrice"></td>
+        <td class="floatingChange dim"></td>
+        <td class="floatingChangePercent dim"></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="floatingFooter">
+    <span id="idPrefExtraFloatingSymbol">
+      <i class="fa-solid fa-circle-chevron-down downArrowBtn hoverBtn"></i>
+      <i class="fa-solid fa-circle-chevron-up upArrowBtn hoverBtn"></i>
+    </span>
+  </div>
+</div>
+<!-- floatingPriceWindowEnd -->
+
+<!-- stickyOpenDivStart -->
+<div id="stickyOpenDiv" data-balloon="Show Tiled Window" data-balloon-pos="left">
+  <span class="icon icon-plus"></span>
+</div>
+<!-- stickyOpenDivEnd -->
+
+<!-- stickyCloseDivStart -->
+<div id="stickyCloseDiv" data-balloon="Hide Tiled Window" data-balloon-pos="left">
+  <span class="icon icon-minus"></span>
+</div>
+<!-- stickyCloseDivEnd -->
+
+<!-- watchListBlockStart -->
+<div data-balloon="WatchList Settings" data-balloon-pos="left">
+  <span id="watchListSettingButton" class="icon icon-settings hoverBtn"></span>
+</div>
+<div data-balloon="Double Click To Delete WatchList" data-balloon-pos="left">
+  <span id="watchListDeleteButton" class="icon icon-trash hoverBtn"></span>
+</div>
+
+<div
+  kt-tooltip="Double-click to load options.For desired expiry, use the expiry selector above in the Straddle-IV info">
+  <span id="watchListGenerateButton" class="icon icon-download hoverBtn"></span>
+</div>
+<!-- watchListBlockEnd -->
+
+<!-- watchListSettingRowStart -->
+<div>
+  <div>Total Strikes</div>
+  <div>
+    <select name="totalStrikes">
+      <option value="8">8</option>
+    </select>
+  </div>
+</div>
+
+<!-- watchListSettingRowEnd -->
+
+<!-- googleFontStart -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Merriweather:ital,wght@0,300;0,400;0,900;1,300;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Oswald&family=Roboto&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet" />
+
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css" />
+<!-- googleFontEnd -->
+
+<!-- googleBetaFontStart -->
+
+<!-- googleBetaFontEnd -->
+
+<!-- PremiumDisplayBlockStart -->
+<div class="row margins">
+  <div class="block" id="premiumBlock"><label>Premium</label><span id="premiumSpan" class="value"></span></div>
+</div>
+<!-- PremiumDisplayBlockEnd -->
+
+<!-- MinVersionStatusBlockStart -->
+<div id="statusRootDiv">
+  <div id="notSupportedVersion" style="display: none">
+    <span class="marginHeader">This version of NeoPlus is no longer supported. Please update to the latest version from
+      the Chrome or Firefox Store.</span>
+    <span>
+      <a href="https://neoplus.radiuscraft.com/" target="_blank"
+        style="cursor: pointer; color: #2c6592; font-size: 14px; font-weight: 900; text-decoration: underline"
+        data-balloon="Update to the latest version" data-balloon-pos="up">
+        Update
+      </a>
+    </span>
+  </div>
+  <div id="notAvailableVersion" style="display: none;">
+    <span class="marginHeader">This version of KitePlus is no longer supported. A new version will be released
+      soon</span>
+    <i id="versionCloseBtn" class="fa fa-window-close" aria-hidden="true"
+      style="color: #717171; cursor: pointer; margin-left: 5px;"></i>
+  </div>
+  <div id="forcedMessage" style="display: none;">
+    <span class="marginHeader">This version of KitePlus is no longer supported. A new version will be released
+      soon</span>
+  </div>
+</div>
+<!-- MinVersionStatusBlockEnd -->
+<!-- NoticeLayerStart -->
+<div class="notice layer-2" id="customNoticeLayer">
+  <div class="notice-wrap layered">
+    <ul class="content">
+      <li><span id="plusMessage"></span></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- NoticeLayerEnd -->
+<!-- GroupExitRowStart -->
+<tr class="groupExitParentRow just-added">
+  <td class="groupExitParent" colspan="100%">
+    <div class="groupExitBtnContainer">
+      <button type="button" class="button-small groupExitBtn">Exit 1 position</button>
+      <button type="button" class="button-small groupClearBtn">Cancel</button>
+    </div>
+  </td>
+</tr>
+<!-- GroupExitRowEnd -->
+
+<!-- GroupHeaderStart -->
+<tr class="groupDiv hiddenChart" id="targetGroupID">
+  <td colspan="100%">
+    <div class="groupDivTopHeader">
+      <div class="groupDivTopDetector"></div>
+      <div class="groupSLTarget sliderF" style="display: flex;flex-basis: 30%;">
+        <div class="groupStopLoss" style="display: flex;align-items: center;">
+          <div class="text-Negative targetHeader">StopLoss</div>
+          <input class="groupStopLossInput text-Negative" placeholder="" autocorrect="off" autocomplete="off"
+            animate="true" />
+          <div>
+            <label class="switch">
+              <input type="checkbox" class="groupStopLossCheckBox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="groupTarget" style="display: flex;align-items: center;">
+          <div class="text-Positive targetHeader">Target</div>
+          <input class="groupTargetInput text-Positive" placeholder="" autocorrect="off" autocomplete="off"
+            animate="true" />
+          <div>
+            <label class="switch">
+              <input type="checkbox" class="groupTargetCheckBox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="groupMessage"></div>
+      </div>
+      <div class="openPosCount" kt-tooltip="open positions / total positions"></div>
+      <div class="groupExpandParent">
+        <i class="fa-solid fa-circle-chevron-right groupExpandBtn"></i>
+      </div>
+      <div style="display: flex; flex-basis: 40%;align-items: center; font-weight: bold;">
+        
+        <div style="flex-basis: 55%;text-align: right;">
+          <span class="groupName" data-balloon="Add all group positions to basket for exit"
+            data-balloon-pos="up"></span>
+        </div>
+
+        <span class="groupProfit"> </span>
+        <span class="groupCalProfit"> </span>
+
+        
+      </div>
+      <div class="groupMaxPL">
+        <div>
+          <a class="payoffButton" style="font-size: 1.35em" data-balloon="Toggle Payoff Graph" data-balloon-pos="up">
+            <i class="fa-solid hoverBtn fa-chart-simple" style="font-size: 1.35em;color: #1280d7;"></i>
+            
+            
+          </a>
+        </div>
+        <div>
+          <div style="text-align: right;" class="ktMaxProfit" kt-tooltip="Max Profit">Max Profit:</div>
+
+          <div style="text-align: right;" class="ktMaxLoss" kt-tooltip="Max Profit">Max Loss:</div>
+          <div class="projectedHeader ktGroupProjected" style="text-align: right;" kt-tooltip="Projected Profit">
+            Projected:
+          </div>
+
+          
+        </div>
+        <div>
+          <div class="groupMaxProfit ktMaxProfit"
+            kt-tooltip="Projected Profit at expiry if the underlying symbol expires at the current level">N/A</div>
+          <div class="groupMaxLoss ktMaxLoss" kt-tooltip="Max Loss">N/A</div>
+          <div class="groupProjected ktGroupProjected" kt-tooltip="Max Profit">N/A</div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="groupMetaDetailsParent">
+      <div class="groupMetaDetails">
+        <div class="groupMetaPart" style="cursor: pointer;" kt-tooltip="Switch to Spot price">
+          <div class="groupMetaPartHeader">Synthetic Fut</div>
+          <div class="groupMetaSyntheticPrice groupMetaPartValue">N/A</div>
+        </div>
+        <div class="groupMetaPart" style="cursor: pointer;" kt-tooltip="Switch to Synthetic Future price">
+          <div class="groupMetaPartHeader">Spot Price</div>
+          <div class="groupMetaSpotPrice groupMetaPartValue">N/A</div>
+        </div>
+        <div class="groupMetaPart">
+          <div class="groupMetaPartHeader">Straddle Price</div>
+          <div class="groupMetaStraddlePrice groupMetaPartValue">N/A</div>
+        </div>
+        <div class="groupMetaPart">
+          <div class="groupMetaPartHeader">ATM IV</div>
+          <div class="groupMetaATMIVPrice groupMetaPartValue">N/A</div>
+        </div>
+        <div class="groupMetaPart" style="cursor: pointer;"
+          kt-tooltip="Combined delta of all positions based on quantities">
+          <div class="groupMetaPartHeader">Group Delta</div>
+          <div class="groupMetaDeltaPrice groupMetaPartValue">N/A</div>
+        </div>
+        <div class="groupMetaPart" style="cursor: pointer;"
+          kt-tooltip="Net delta of open positions without considering quantities; helps assess directional bias.">
+          <div class="groupMetaPartHeader">Net Delta</div>
+          <div class="groupMetaNetDeltaPrice groupMetaPartValue">N/A</div>
+        </div>
+        <div class="groupMetaPart">
+          <div class="groupMetaPartHeader">Margin</div>
+          <div class="groupMetaMarginUsed groupMetaPartValue">N/A</div>
+        </div>
+      </div>
+      <div class="groupCallPutInfoParent">
+        <div class="groupCallPutInfoDetail">
+          
+          <div class="groupMetaDetails">
+            <div class="groupMetaPart" kt-tooltip="Current premium for call side open positions based on LTP">
+              <div class="groupMetaPartHeader">CE Premium</div>
+              <div class="groupMetaCallPremium groupMetaPartValue">N/A</div>
+            </div>
+            <div class="groupMetaPart" kt-tooltip="Current premium for put side open positions based on LTP">
+              <div class="groupMetaPartHeader">PE Premium</div>
+              <div class="groupMetaPutPremium groupMetaPartValue">N/A</div>
+            </div>
+          </div>
+        </div>
+        <div class="groupCallPutInfoDetail">
+          
+
+          <div class="groupMetaDetails">
+            <div class="groupMetaPart" kt-tooltip="Call side profit">
+              <div class="groupMetaPartHeader">CE Profit</div>
+              <div class="groupMetaCallPNL groupMetaPartValue">N/A</div>
+            </div>
+            <div class="groupMetaPart" kt-tooltip="Put side profit">
+              <div class="groupMetaPartHeader">PE Profit</div>
+              <div class="groupMetaPutPNL groupMetaPartValue">N/A</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="payoffDetails">
+      <div>
+        <a class style="font-size: 1.35em" id="payoffZoomIn" data-balloon="Toggle Payoff Graph" data-balloon-pos="down">
+          <i class="fa-solid fa-magnifying-glass-plus"></i></a>
+        <a class style="font-size: 1.35em" id="payoffZoomOut" data-balloon=" Toggle Payoff Graph"
+          data-balloon-pos="down"> <i class="fa-solid fa-magnifying-glass-minus"></i></a>
+      </div>
+    </div>
+    <div class="payoffParent">
+      <div class="payoffChart"></div>
+    </div>
+  </td>
+</tr>
+<!-- GroupHeaderEnd -->
+
+<!-- PositionRowFooterStart -->
+
+<div class="positionRowDetails">
+  <div class="posRowPart" kt-tooltip="IV of the Strike">
+    <div class="posRowPartHeader">Strike IV</div>
+    <div class="posRowPartValue posRowStrikeIv">N/A</div>
+  </div>
+  <div class="posRowPart" kt-tooltip="Individual strike delta, ignoring quantities.">
+    <div class="posRowPartHeader">Strike Delta</div>
+    <div class="posRowPartValue posRowStrikeDelta">N/A</div>
+  </div>
+  <div class="posRowPart" kt-tooltip="Strike delta multiplied by the number of lots, including buy/sell direction.">
+    <div class="posRowPartHeader">Lot X Delta</div>
+    <div class="posRowPartValue posRowPositionDelta">N/A</div>
+  </div>
+</div>
+<!-- PositionRowFooterEnd -->
+<!-- GroupCheckBoxStart -->
+<div class="groupViewSettingParent">
+  
+  <div style="position: relative;cursor: pointer;">
+    <Span>
+      <i id="groupViewSettingBtn" class="fa-solid fa-gears"></i>
+      <span style="font-size: 1.3em;margin:0em 0.3em;">Group Settings</span>
+    </Span>
+  </div>
+
+  <div class="groupViewSettingDropdownContainer">
+    <div class="groupViewSettingDropdown">
+      <div class="groupViewSettingSetParent">
+        <div class="groupViewSettingSet">
+          <div class="groupViewSettingHeader">
+            GroupView
+          </div>
+          <div class="groupViewSettingValue sliderF">
+            <label class="switch">
+              <input type="checkbox" id="idPrefPositionGroupOption" style="display: none;" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="groupViewSettingSet gorupViewDependSetting">
+          <div class="groupViewSettingHeader" kt-tooltip="If enabled positions will be grouped by expiry">
+            <div class="subHeaderText"> Group By Expiry </div>
+          </div>
+          <div class="groupViewSettingValue sliderF">
+            <label class="switch">
+              <input type="checkbox" id="idPrefGroupExpiryWise" style="display: none;" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="groupViewSettingSet gorupViewDependSetting">
+          <div class="groupViewSettingHeader sliderF"
+            kt-tooltip="Enable or Disable Call Put premium and profit info for position groups">
+            <div class="subHeaderText"> Call-Put Info</div>
+          </div>
+          <div class="groupViewSettingValue sliderF">
+            <label class="switch">
+              <input type="checkbox" id="idPrefGroupViewCallPutInfo" style="display: none;" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="groupViewSettingSet gorupViewDependSetting">
+          <div class="groupViewSettingHeader"
+            kt-tooltip="Enable or Disable Straddle-IV Info and margin info for position groups">
+            <div class="subHeaderText"> Straddle-IV Info</div>
+          </div>
+          <div class="groupViewSettingValue sliderF">
+            <label class="switch">
+              <input type="checkbox" id="idPrefGroupViewStraddleInfo" style="display: none;" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="groupViewSettingSet">
+          <div class="groupViewSettingHeader" kt-tooltip="Show option greeks for each positions">Position
+            Greeks </div>
+
+          <div class="groupViewSettingValue sliderF">
+            <label class="switch">
+              <input type="checkbox" id="idPrefPositoinGreeks" style="display: none;" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GroupCheckBoxEnd -->
+
+<!-- positionUtilityStart -->
+
+<div class="posBasketUtility">
+  <a kt-tooltip="Move strike to a different strike with the basket">
+    <i class="fa-regular fa-pen-to-square hoverBtn positionEdit"></i>
+  </a>
+</div>
+<div class="posDefaultUtility">
+  <div>
+    <a class="positionAdd" kt-tooltip="Add quantities">
+      <i class="fa-solid hoverBtn fa-plus" style="color: #478032;"></i>
+      
+    </a>
+  </div>
+  
+</div>
+
+<!-- positionUtilityEnd -->
+
+<!-- PayoffTooltipStart -->
+<div style="text-align: center; font-weight: bolder; font-size: 1em">$instHeader</div>
+<div style="text-align: center; font-size: 1.05em; margin: 2px 0px; font-weight: bolder">$strikeLevel</div>
+<div class="tooltipPrice">$profitAmount</div>
+<!-- PayoffTooltipEnd -->
+
+<!-- metaChartTooltipStart -->
+<div class="metaChartTooltipParent">
+  <div class="metaChartTooltipDiv">
+    <div class="metaChartTooltipHeader spotTooltip">$indexName</div>
+    <div class="metaChartTooltipValue spotTooltip">$spotPrice</div>
+  </div>
+  <div class="metaChartTooltipDiv">
+    <div class="metaChartTooltipHeader metaStraddleValue">Straddle Price</div>
+    <div class="metaChartTooltipValue metaStraddleValue">$straddlePrice</div>
+  </div>
+  <div class="metaChartTooltipDiv">
+    <div class="metaChartTooltipHeader metaIVValue">ATM IV</div>
+    <div class="metaChartTooltipValue metaIVValue">$ivPrice</div>
+  </div>
+  <div class="metaChartTooltipDiv">
+    <div class="metaChartTooltipHeader">ATM Strike</div>
+    <div class="metaChartTooltipValue">$atmStrike</div>
+  </div>
+  <div class="metaChartTooltipDiv">
+    <div class="metaChartTooltipHeader">Time</div>
+    <div class="metaChartTooltipValue">$time</div>
+  </div>
+</div>
+<!-- metaChartTooltipEnd -->
+
+<!-- mtmChartTooltipStart -->
+<div class="mtmChartTooltipParent">
+  <div class="mtmChartTooltipDiv">
+    <div class="metaChartTooltipHeader mtmTooltipValue">MTM</div>
+    <div class="metaChartTooltipValue mtmTooltipValue">$mtmValue</div>
+  </div>
+  <div class="mtmChartTooltipDiv">
+    <div class="metaChartTooltipHeader spotTooltip">$indexName</div>
+    <div class="metaChartTooltipValue spotTooltip">$spotPrice</div>
+  </div>
+  <div class="mtmChartTooltipDiv">
+    <div class="metaChartTooltipHeader">Time</div>
+    <div class="metaChartTooltipValue">$time</div>
+  </div>
+</div>
+<!-- mtmChartTooltipEnd -->
+
+<!-- TickerDebugWindowStart -->
+<div>
+  <div style="display: flex;  justify-content: flex-end;  margin: 0.2em 0;  padding: 0em 1em;">
+    <a class="refreshButton" style="font-size: 1.25em">
+      <i class="fa-solid hoverBtn fa-close" style="font-size: 1.25em;color: #1280d7;"></i>
+      
+      
+    </a>
+  </div>
+  <div class="tickerContainer">
+    <div class="globalTickers tickersParent">
+      <div class="tickerHeader"><span>Global Tokens</span> <span class="tokenCount"></span></div>
+      <div class="tickerData"></div>
+    </div>
+    <div class="positionTickers tickersParent">
+      <div class="tickerHeader"><span>Position Tokens</span><span class="tokenCount"></span></div>
+      <div class="tickerData"></div>
+    </div>
+    <div class="watchListTickers tickersParent">
+      <div class="tickerHeader"><span>Watchlist Tokens</span><span class="tokenCount"></span></div>
+      <div class="tickerData"></div>
+    </div>
+    <div class="customWatchListTickers tickersParent">
+      <div class="tickerHeader"><span>Custom Watchlist</span><span class="tokenCount"></span></div>
+      <div class="tickerData"></div>
+    </div>
+    <div class="orderPlacementTickers tickersParent">
+      <div class="tickerHeader"><span>Order Placement</span><span class="tokenCount"></span></div>
+      <div class="tickerData"></div>
+    </div>
+    <div class="basketTickers tickersParent">
+      <div class="tickerHeader"><span>Basket Tokens</span><span class="tokenCount"></span></div>
+      <div class="tickerData"></div>
+    </div>
+    <div class="indexMetaTickers tickersParent">
+      <div class="tickerHeader"><span>Index Meta</span><span class="tokenCount"></span></div>
+      <div class="tickerData"></div>
+    </div>
+    <div class="pendingUnSubTickers tickersParent">
+      <div class="tickerHeader"><span>Pending</span><span class="tokenCount"></span></div>
+      <div class="tickerData"></div>
+    </div>
+  </div>
+</div>
+<!-- TickerDebugWindowEnd -->
+
+<!-- PinnedAverageBlockStart -->
+<span class="pinnedInstSpan">Average: </span><span class="pinnedAveragePrice"></span>
+<!-- PinnedAverageBlockEnd -->

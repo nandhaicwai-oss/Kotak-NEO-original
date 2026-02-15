@@ -1,0 +1,192 @@
+<div id="positionSwitcherBG"></div>
+
+<div id="positionSwitcherModal">
+    <div class="modal-container layer-2">
+        <div class="dragHeaderHandle"></div>
+
+        <div class="modal-header">
+            <div class="searchParentDiv">
+                <i class="fa-solid fa-magnifying-glass searchButtonSymbol"></i>
+
+                <div class="basketSearchDiv" style="display: flex;flex-direction: column;">
+                    <input name="basketSearchSymbol" type="text" autocorrect="off" autocomplete="off" />
+                    <div class="ulParentDiv">
+                        <ul>
+
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div>
+                    <i class="fa-regular fa-circle-xmark searchClose"></i>
+                </div>
+
+            </div>
+            
+            <div class="row"><span class="basketPrice"></span><span class="basketChange"></span></div>
+            <div class="row">
+                <span class="text-label small aqua amber orderDayType" style="cursor: pointer;">
+                    MIS
+                </span>
+            </div>
+            
+
+        </div>
+        <div class="modal-body">
+            <div class="basketNoPosHeader">Start by adding new or existing position from position window</div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class=""><span></span></th>
+                            <th class=""><span></span></th>
+                            <th class=""><span>Symbol</span></th>
+                            <th class=""><span>Expiry</span></th>
+                            <th class="status"><span>Strike</span></th>
+                            <th class="status"><span>CE/PE</span></th>
+                            <th class=""><span> LTP </span></th>
+                            <th class="thBestPrice"><span> Best Price </span></th>
+                            <th class="thDelta"><span> Delta</span></th>
+                            
+                            <th class=""><span> Qty. </span></th>
+                            <th class="status"><span>Remove</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <td>
+                                
+                                <div class="su-checkbox-group posCheckbox">
+                                    <input type="checkbox" class="su-checkbox">
+                                    <label class="su-checkbox-label">
+                                        <span class="su-checkbox-box">
+                                            <span class="su-checkbox-tick"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td width="5%" class="posBuySellType">
+                                <span class="text-label text-label-outline small transaction-type blue">
+                                    BUY
+                                </span>
+                            </td>
+                            <td class="posMainSymbol">
+                                NIFTY
+                            </td>
+                            
+                            <td class="posExpiry">
+                                <div class="su-select">
+                                    <select name="expirySelect"></select>
+                                </div>
+
+                            </td>
+                            <td class="posStrike">
+                                <div class="rowStrike rowUpDown">
+                                    <i class="fa-solid fa-circle-minus strikeDown"></i>
+                                    <span>24600</span>
+                                    <i class="fa-solid fa-circle-plus strikeUp"></i>
+                                </div>
+                            </td>
+                            <td class="posCallPutType">
+                                <span></span>
+                            </td>
+                            <td class="posLTP"><span>N/A</span>
+                            </td>
+                            <td class="posBTP"><span>N/A</span>
+                            </td>
+                            <td class="posDelta"><span>N/A</span>
+                            </td>
+                            
+                            <td class="posQuantity">
+
+                                <div class="rowQuantity rowUpDown">
+                                    <i class="fa-solid fa-circle-minus quantityDown"></i>
+                                    <div class="su-input-group">
+                                        <input name="posQuantity" type="text" autocorrect="off" autocomplete="off"
+                                            maxlength="5" size="5" pattern="[0-9]{10}" />
+                                    </div>
+                                    <i class="fa-solid fa-circle-plus quantityUp"></i>
+                                </div>
+                                <div class="basketQuantityMultiplier">
+
+                                </div>
+                            </td>
+
+                            <td class="posDelete">
+                                <span>
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
+                            </td>
+                        </tr> 
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            </div>
+            <div class="modalBodyBottomDiv">
+                <div class="modalBottomDivChild"></div>
+                <div class="modalBottomDivChild"><i class="fa-solid fa-square-plus addBtn"></i></div>
+                <div class="rowQuantity rowUpDown basketGroupQuantity modalBottomDivChild">
+                    <div>Multiplier</div>
+                    <i class="fa-solid fa-circle-minus basketgroupQuantityDown"></i>
+                    <div class="su-input-group">
+                        <input type="text" autocorrect="off" autocomplete="off" maxlength="3" size="3"
+                            pattern="[0-9]{10}" />
+                    </div>
+                    <i class="fa-solid fa-circle-plus basketgroupQuantityUp"></i>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="basketStateInfo">
+                <div
+                    kt-tooltip="Premium to be received after execution; a negative value means you will need to pay this premium.">
+                    <div class="basketInfoHeader">Premium</div>
+                    <div class="basketInfoContent" id="basketInfoPremium">N/A</div>
+                </div>
+                <div kt-tooltip="Additional margin required; negative value indicates a margin release.">
+                    <div class="basketInfoHeader">Extra Margin</div>
+                    <div class="basketInfoContent" id="basketInfoAddMargin">N/A</div>
+                </div>
+                <div
+                    kt-tooltip="Shows the margin left after executing the basket. A negative value means a margin shortfall to execute this basket">
+                    <div class="basketInfoHeader">Remaining Margin</div>
+                    <div class="basketInfoContent" id="basketInfoRemMargin">N/A</div>
+                </div>
+            </div>
+            <div>
+                <div class="actions">
+                    <button type="button" class="button-blue buttonExecute">
+                        <span class="executeButtonLock" style="min-width: 6ch;">
+                            <i class="fa-solid fa-lock" style="font-size:
+                                15px;margin-left: 2px;"></i></span>
+                        <span class="executeButtonText">Execute</span>
+                    </button>
+                    <button type="button" class="button-outline buttonClose">Close</button>
+                </div>
+            </div>
+        </div>
+        <div class="basketResponseDiv">
+            <span class="responseMessage">Successfully</span>
+        </div>
+        <div class="basketPageDivParent">
+            <div class="basketPageBtnSetParent">
+                <div class="basketPageBtn">
+                    <span class="basketPageBtnText">Default</span>
+                </div>
+            </div>
+            <div class="basketPageUtilityBtnSet" style="display: none;">
+                <div>
+                    <span class="posClone" kt-tooltip="Clone Default basket to current basket">
+                        <i class="hoverBtn fa-solid fa-paste"></i>
+                    </span>
+                </div>
+                <div>
+                    <span class="posDelete" kt-tooltip="Clear all positions">
+                        <i class="hoverBtn fa-solid fa-trash"></i>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

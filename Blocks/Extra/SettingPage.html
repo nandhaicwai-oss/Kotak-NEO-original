@@ -1,0 +1,223 @@
+<html>
+
+<head>
+    <meta https-equiv="Content-Security-Policy" content="default-src *;" />
+    <title>NeoPlus Settings</title>
+    <style>
+        body {
+            /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+        }
+
+        #logo {
+            display: block;
+            margin: auto;
+            width: 150px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .popupDiv {
+            margin: auto;
+            padding: 15px;
+            padding-bottom: 15px;
+            justify-content: center;
+            width: 400px;
+            /* height: 220px; */
+            border-radius: 15px;
+            border: solid 2px rgb(77, 77, 77);
+            /* overflow: scroll;
+            font-family: "Open Sans", sans-serif;*/
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 24px;
+            margin: 10px;
+        }
+
+        /* Giriş stil */
+        .toggle-switch .toggle-input {
+            display: none;
+        }
+
+        /* Anahtarın stilinin etrafındaki etiketin stil */
+        .toggle-switch .toggle-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 24px;
+            background-color: #454545;
+            border-radius: 34px;
+            cursor: pointer;
+            transition: background-color 0.05s;
+        }
+
+        /* Anahtarın yuvarlak kısmının stil */
+        .toggle-switch .toggle-label::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            background-color: #fff;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+            transition: transform 0.05s;
+        }
+
+        /* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
+        .toggle-switch .toggle-input:checked+.toggle-label {
+            background-color: #4CAF50;
+        }
+
+        .toggle-switch .toggle-input:checked+.toggle-label::before {
+            transform: translateX(16px);
+        }
+
+        /* Light tema */
+        .toggle-switch.light .toggle-label {
+            background-color: #BEBEBE;
+        }
+
+        .toggle-switch.light .toggle-input:checked+.toggle-label {
+            background-color: #9B9B9B;
+        }
+
+        .toggle-switch.light .toggle-input:checked+.toggle-label::before {
+            transform: translateX(6px);
+        }
+
+        /* Dark tema */
+        .toggle-switch.dark .toggle-label {
+            background-color: #4B4B4B;
+        }
+
+        .toggle-switch.dark .toggle-input:checked+.toggle-label {
+            background-color: #717171;
+        }
+
+        .toggle-switch.dark .toggle-input:checked+.toggle-label::before {
+            transform: translateX(16px);
+        }
+
+        .settingHeader {
+            font-weight: bolder;
+            font-size: 18px;
+            text-align: center;
+            color: #2c6592;
+            margin-bottom: 2%;
+            background: #4e4e4e38;
+            border-radius: 4px;
+            padding: 2px 0px;
+        }
+
+        .settingToggleParent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 28px;
+        }
+
+        .settingToggleLabel {
+            font-weight: bolder;
+            font-size: 14px;
+            color: #2c6592;
+            min-width: 12rem;
+            text-align: center;
+        }
+
+        .settingInputLabel {
+            min-width: 25px;
+        }
+
+        .inputSetParent {
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 15px 0px;
+            margin-bottom: 8%;
+        }
+
+        .settingInputParent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px
+        }
+
+        .settingInputParent input {
+            padding: 2px 5px;
+            border-radius: 2px;
+            outline-width: 0;
+            border: 1px solid #6e6e6e;
+            color: #040404;
+            /* border-color: #dbdbdb; */
+        }
+
+        .settingInputSubLabel {
+            font-size: 0.9em;
+            color: #6c6c6c;
+            font-weight: bold;
+        }
+
+        .popupDiv a {
+            color: #2c6592;
+            font-size: 1.1em;
+        }
+    </style>
+    <script src="settingPage.js"></script>
+
+</head>
+
+<body>
+    <div class="popupDiv">
+        <img id="logo" src="../../Arts/KitePlus_Logo.png">
+        
+        <div style="display: flex;justify-content: center;align-items: center;margin-top: 5%;">
+            <div style="font-weight: bolder;font-size: 18px; color: #2c6592 ;">Switch</div>
+            <div class="toggle-switch" style="scale: 1.1;">
+                <input class="toggle-input" id="toggle" type="checkbox">
+                <label class="toggle-label" for="toggle"></label>
+            </div>
+
+        </div>
+        <div id="enableDisableInfo" style="font-weight: bolder;font-size: 13px;text-align: center; color: #2c6592 ;">
+            <span>(Enable or disable
+                <span class="appName">NeoPlus</span> completely )</span>
+        </div>
+
+        <div style="margin-top: 7%;">
+            <div class="settingHeader">Experimental Options
+            </div>
+
+            <div class="toggleSetParent">
+            </div>
+
+            <div class="InputSetParent">
+            </div>
+
+            <div style="text-align: center;font-weight: bolder;font-size: 16px;margin-top: 10px;color:#2c6592 ;">
+                <button id="exportLogBtn" style="font-weight: bold;
+                padding: 0.2rem 0.28rem;                
+                border: 1px solid #7f7f7f;cursor: pointer;
+                border-radius: 2px;"> Export Logs</button>
+            </div>
+        </div>
+
+
+        <div style="text-align: center;font-weight: bolder;font-size: 16px;margin-top: 25px;color:#2c6592 ;">
+            <a id="siteLink" href="https://neoplus.radiuscraft.com/" target="_blank">neoplus.radiuscraft.com</a>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+</html>

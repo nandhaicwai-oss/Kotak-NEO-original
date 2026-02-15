@@ -1,0 +1,14 @@
+[
+  {
+    "Warning": "KitePlus runs locally on the user's browser, so a reliable internet connection is required for tracking MTM continuously."
+  },
+  {
+    "Warning": "At any time, if the MTM is below the stoploss or above the target, all positions will be squared off one by one at the market price."
+  },
+  {
+    "Warning": "When there are illiquid positions, avoid using the MTM stoploss and target feature."
+  },
+  {
+    "Warning": "KitePlus is not responsible for user's profit or losses."
+  }
+]

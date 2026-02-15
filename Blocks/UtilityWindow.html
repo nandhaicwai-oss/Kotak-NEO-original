@@ -1,0 +1,442 @@
+<div id="utilityBG"></div>
+<div id="utilityModal">
+    
+    <tab-container>
+        
+        
+
+        <input class="tabInput" type="radio" id="tabToggle01" name="tabs" value="1" checked />
+        <label class="tabText" for="tabToggle01">Preferences</label>
+
+        <input style="display: none;" class="tabInput" type="radio" id="tabToggle02" name="tabs" value="2" />
+        <label style="display: none;" class="tabText" for="tabToggle02">WatchList Settings</label>
+
+        <input class="tabInput" type="radio" id="tabToggle03" name="tabs" value="3" />
+        <label class="tabText" for="tabToggle03">About</label>
+
+        
+        <tab-content class="tabContent sliderF normalTabContent">
+            <div class="profile" id="tabProfile">
+                <div class="row neoDisabled">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Default setting for right side tiled order window, this will apply by default on page refresh">
+                        Tiled Order Window</div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefTiledOrderWindow" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Show available cash in the status bar">
+                        Show Available Cash
+                    </div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefAvailableCash" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Disabling this will stop processing the MTM chart even in the background">MTM Chart
+                        Feature
+                    </div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefMTMChartFeatures" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Disabling this will stop processing the ATM chat even in the background">ATM Chart
+                        Feature
+                    </div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefATMChartFeatures" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row neoDisabled">
+                    <div class=" five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Enable or Disable Straddle-IV Info feature above the watchlist">Straddle-IV Info
+                    </div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefStraddleIVInfo" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row neoDisabled">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Enable or Disable Indices price window at top-center of the screen">Indices
+                        Price Window
+                    </div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefFloatingPriceWindow" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Compact view which has less space between rows to fit more content">Compact View
+                    </div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefCompactView" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Separate colors for calls and puts in the watchlist">Colorized
+                        Strikes</div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefColorizeStrikes" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Sound when orders executes or rejected">Alert Sounds</div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefNotificationSound" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Enable auto TOTP by adding TOTP QR Key">Auto TOTP</div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefAutoTotp" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row neoOnly">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Only use neo trade api for placing order, don't use default web as backup">
+                        Force Use Trade API</div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefForceNeoTradeAPI" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row"
+                    kt-tooltip="Load fresh instruments file, only do this if any newly added symbols are missing. Page will be reloaded after clicking this.">
+                    <div class="five columns label" kt-tooltip-position="top">
+                        Load
+                        Fresh
+                        instruments
+                    </div>
+                    <div class="seven columns value">
+                        <a target="_blank" id="reloadFreshInstruments">Load</a>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Different types of font for entire kite web">Fonts</div>
+                    <div class="seven columns value">
+                        <div class="su-select">
+                            <select name="fontFamily" id="idPrefFontFamily">
+                            </select>
+                            <i class="select-fa fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="five columns label">DM For Help</div>
+                    <div class="seven columns value">
+
+                        
+                        <a data-balloon="DM On Twitter" data-balloon-pos="up"
+                            href="https://x.com/messages/compose?recipient_id=84636740" target="_blank"
+                            id="flushWatchList">
+                            <i id="versionCloseBtn" class="fab fa-twitter" aria-hidden="true"
+                                style="color: #1DA1F2;font-size: 1.175rem; cursor: pointer;margin: 0rem 0.4rem;"></i></a>
+
+                        <a data-balloon="DM On Whatsapp" data-balloon-pos="up" href="https://wa.me/917383487805"
+                            target="_blank" id="flushWatchList"> <i id="versionCloseBtn" class="fab fa-whatsapp"
+                                aria-hidden="true"
+                                style="color: #25D366;font-size: 1.175rem; cursor: pointer;margin: 0rem 0.4rem;"></i></a>
+
+                    </div>
+                </div>
+                
+                <div class="row" style="display: none;">
+                    <div class="five columns label">Help</div>
+                    <div class="seven columns value">
+                        <div class="su-input-group">
+                            <input type="text" id="idPrefTOTPHash" placeholder="Enter TOTP Key" autocorrect="off"
+                                autocomplete="off" animate="true" />
+                            <label for="idPrefTOTPHash" class="su-input-label su-dynamic-label">Enter TOTP
+                                Key</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="settingHelp neoDisabled">
+                    <a href="https://neoplus.radiuscraft.com/wp-content/uploads/2024/03/wst_4.jpg" target="_blank">
+                        <div data-balloon="Visit NeoPlus For More Help" data-balloon-pos="left"> <i
+                                class="fa-solid fa-circle-question"></i>
+
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+            <div class="lockedTabDiv">
+                <a href="https://neoplus.radiuscraft.com/#pricing" target="_blank" class="lockSpan kitePricingLink">
+                    
+                    <span style="font-size: 1em; color: rgb(217, 217, 217)"> <i class="fa-solid fa-lock"></i></span>
+
+                    
+                </a>
+            </div>
+        </tab-content>
+        <tab-content class="tabContent sliderF" id="watchListTabContent" style="display: none;">
+            <div class="profile">
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Different types of preset for loading instruments">Watchlist Preset</div>
+                    <div class="seven columns value">
+                        <div class="su-select">
+                            <select name="optionChainType" id="idPrefOptionChainType">
+                                <option value="OTM">Strangle</option>
+                                <option value="FAR_OTM">Far OTM</option>
+                                <option value="ATM">Straddle Pair</option>
+                            </select>
+                            <i class="icon icon-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Total number of strikes required to load in watchlist ">Total Strikes</div>
+                    <div class="seven columns value">
+                        <div class="su-select su-select-totalStrikes">
+                            <select name="totalStrikes" id="idPrefTotalStrikes">
+                            </select>
+                            <i class="icon icon-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="Total number of ITM strikes required to load in watchlist ">ITM Strikes</div>
+                    <div class="seven columns value">
+                        <div class="su-select su-select-totalStrikes">
+                            <select name="itmStrikes" id="idPrefITMStrikes">
+                                <option value="-6">-6</option>
+                                <option value="-5">-5</option>
+                                <option value="-4">-4</option>
+                                <option value="-3">-3</option>
+                                <option value="-2">-2</option>
+                                <option value="-1">-1</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+
+                            </select>
+                            <i class="icon icon-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="five columns label" kt-tooltip-position="top"
+                        kt-tooltip="PE-CE : Put options will be loaded first then Call options in watchlist">Strikes
+                        Format
+                    </div>
+                    <div class="seven columns value, same for CE-PE">
+                        <div class="su-checkbox-group">
+                            <input name="strikesFormat" id="idPrefPE" value="PE" type="radio" class="su-checkbox">
+                            <label for="idPrefPE" class="su-checkbox-label tabCheckbox">
+                                <span class="su-checkbox-box">
+                                    <span class="su-checkbox-tick">
+                                    </span></span>
+                                <span class="checkboxLabel">PE-CE</span>
+                            </label>
+                        </div>
+                        <div class="su-checkbox-group">
+                            <input name="strikesFormat" id="idPrefCE" value="CE" type="radio" class="su-checkbox">
+                            <label for="idPrefCE" class="su-checkbox-label tabCheckbox">
+                                <span class="su-checkbox-box">
+                                    <span class="su-checkbox-tick">
+                                    </span></span>
+                                <span class="checkboxLabel">CE-PE</span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row" style="display: none;">
+                    <div class="five columns label">Only Load Liquid Options</div>
+                    <div class="seven columns value">
+                        <label class="switch">
+                            <input type="checkbox" id="idPrefLiquidOption" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="five columns label">How To Use</div>
+                    <div class="seven columns value">
+                        <a data-balloon="Watch Youtube Video" data-balloon-pos="up"
+                            href="https://www.youtube.com/watch?v=I3dhTr1MCLw" target="_blank" id="flushWatchList">Watch
+                            Video</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="lockedTabDiv">
+                <a href="https://neoplus.radiuscraft.com/" target="_blank" class="lockSpan">
+                    <span style="font-size: 15px; color: rgb(217, 217, 217)" class="icon icon-lock"></span></a>
+                
+            </div>
+        </tab-content>
+
+        <tab-content class="tabContent sliderF" id="aboutTabContent">
+            <div>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+                    crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <div class="aboutSection">
+                    <div class="rowHeader">
+
+                        <div style="display: flex;flex-direction: column;">
+                            <a href="https://neoplus.radiuscraft.com/" target="_blank"> <img
+                                    id="aboutSectionLogo"></img></a>
+                            <div class='logoDiv'>
+                                <div class='firstAppText'>KITE</div>
+                                <div class='secondAppText'>PLUS</div>
+                                <div class='thirdAppText'></div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="aboutSectionColumn">
+                        <div class="columnHeader">Subscription Details</div>
+
+                        <div class="aboutSectionRow">
+                            <span id="idBrokerIDHeader" class="aboutSectionRowHeader">Zerodha ID:</span>
+                            <span id="idBrokerID"></span>
+                        </div>
+                        <div class="aboutSectionRow">
+                            <span id="licenseHeader" class="aboutSectionRowHeader">Valid till:</span>
+                            <span id="expiryDateInfo"></span>
+                        </div>
+                        <div class="aboutSectionRow">
+                            <span><a href="https://neoplus.radiuscraft.com/#pricing" class="kitePricingLink"
+                                    target="_blank" id="aboutPurchase" data-balloon="Get Subscription"
+                                    data-balloon-pos="up">Get Subscription</a></span>
+                        </div>
+
+                    </div>
+                    <div class="aboutSectionColumn">
+                        <div class="columnHeader">Version Info.</div>
+                        <div class="aboutSectionRow">
+                            <span class="aboutSectionRowHeader">Version:</span>
+                            <span id="versionText">1.0.1</span>
+                        </div>
+                        <div class="aboutSectionRow">
+                            <span><a id="updateAvail" data-balloon="Update to the latest version"
+                                    data-balloon-pos="up">Update
+                                    Available</a></span>
+                            
+
+                        </div>
+                        <div class="aboutSectionRow lockedOnly">
+                            <span><a href="https://neoplus.radiuscraft.com/#features" target="_blank" id="aboutPurchase"
+                                    data-balloon="Get Subscription" data-balloon-pos="up">See all
+                                    Features
+                                </a></span>
+                        </div>
+                    </div>
+                    <div class="aboutSectionColumn">
+                        <div class="columnHeader">About <b class="targetAppName">KitePlus</b></div>
+                        
+                        <div class="aboutSectionRow">
+
+                            <span class="aboutSectionRowHeader">Developed by:</span>
+                            <span style="font-weight: bold;">Dakshesh Patel</span>
+                            
+                            
+
+                        </div>
+                        <div class="aboutSectionRow" style="margin:5px 0px;">
+
+                            <span><a href="https://twitter.com/Daksheshpatel" target="_blank">
+                                    <i style="font-size: 1.428em;margin: 0 0.25em;"
+                                        class="fab fa-twitter"></i></a></span>
+                            <span class="premOnly neoDisabled"><a href="https://www.instagram.com/dakshesh.kothari/"
+                                    target="_blank">
+                                    <i style="font-size: 1.428em;margin: 0 0.25em;"
+                                        class="fab fa-instagram"></i></a></span>
+                        </div>
+
+                        <div class="aboutSectionRow premOnly">
+                            <span class="aboutSectionRowHeader" style="margin-top: 10px;">If you like <b
+                                    class="targetAppName">KitePlus</b>, Please</span>
+                        </div>
+                        <div class="aboutSectionRow premOnly">
+                            <a id="storeReviewLink" href="https://kiteplus.radiuscraft.com/" target="_blank"
+                                class="aboutSectionRowHeader">Rate On WebStore</a>
+                        </div>
+
+
+                        
+                    </div>
+                    <div class="aboutSectionColumn lockedOnly">
+                        <div class="columnHeader">DM For Help</div>
+                        <div class="aboutSectionRow">
+                            <a data-balloon="DM On Twitter" data-balloon-pos="up"
+                                href="https://x.com/messages/compose?recipient_id=84636740" target="_blank"
+                                id="flushWatchList">
+                                <i id="versionCloseBtn" class="fab fa-twitter" aria-hidden="true"
+                                    style="color: #1DA1F2;font-size: 1.375rem; cursor: pointer;margin: 0.3rem 0.5rem;"></i></a>
+                            <a data-balloon="DM On Whatsapp" data-balloon-pos="up" href="https://wa.me/917383487805"
+                                target="_blank" id="flushWatchList"> <i id="versionCloseBtn" class="fab fa-whatsapp"
+                                    aria-hidden="true"
+                                    style="color: #25D366;font-size: 1.375rem; cursor: pointer;margin: 0.3rem 0.5rem;"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </tab-content>
+    </tab-container>
+</div>

@@ -1,0 +1,419 @@
+.payoffParent {
+  position: relative;
+  height: 300px;
+  transition: height 0.15s ease-in;
+  
+}
+
+.payoffParent.hiddenChart {
+  height: 0px;
+  transition: height 0.15s ease-in;
+}
+
+.hiddenChart .payoffParent {
+  height: 0px;
+  transition: height 0.15s ease-in;
+}
+
+.hiddenPL .payoffParent {
+  height: 0px;
+  visibility: collapse;
+  position: absolute;
+}
+
+.payoffDetails {
+  display: none;
+  
+  justify-content: flex-end;
+}
+
+#chartRootParent #tv-attr-logo,
+.payoffChart #tv-attr-logo {
+  display: none;
+}
+
+.hiddenChart .payoffDetails {
+  display: none;
+}
+
+.payoffChart {
+  position: absolute;
+  padding: 5px 0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.hiddenChart .payoffChart {
+  visibility: collapse;
+  position: absolute;
+}
+
+.payoffToolTipStyle {
+  background-color: #070707;
+  
+  border-color: #8229ff;
+  min-width: 96px;
+  
+  position: absolute;
+  display: none;
+  padding: 4px;
+  box-sizing: border-box;
+  font-size: 0.75rem;
+  text-align: left;
+  z-index: 1000;
+  top: 12px;
+  left: 12px;
+  pointer-events: none;
+  border: 1px solid;
+  border-radius: 2px;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="default"] .payoffToolTipStyle {
+  background-color: #f9f9f9;
+  border: 1.2px solid;
+}
+
+.positiveTooltip.payoffToolTipStyle {
+  border-color: #45cf70;
+}
+
+.negativeTooltip.payoffToolTipStyle {
+  border-color: #f15757;
+}
+
+.positiveTooltip.metaChartTooltipStyle {
+  border-color: #45cf70;
+}
+
+.spotTooltip {
+  color: #1280d7;
+}
+
+.negativeTooltip.metaChartTooltipStyle {
+  border-color: #f15757;
+}
+
+.positiveTooltip .mtmTooltipValue {
+  color: #45cf70;
+}
+
+.negativeTooltip .mtmTooltipValue {
+  color: #f15757;
+}
+
+.tooltipPrice {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.positiveTooltip .tooltipPrice {
+  color: #45cf70;
+}
+
+.negativeTooltip .tooltipPrice {
+  color: #f15757;
+}
+
+.payoffButton {
+  font-size: 1.25rem;
+  margin: 0px 10px;
+  color: #3b6feb;
+}
+
+.payoffButton:hover {
+  color: #3363d1;
+}
+
+#chartRootParent {
+  position: absolute;
+  visibility: collapse;
+}
+
+.page-positions #chartRootParent {
+  margin: 0px 10px;
+  border: solid 2px;
+  border-radius: 5px;
+  
+  border-color: #26a69a52;
+  position: relative;
+  visibility: visible;
+  
+  
+  padding: 0.5em 0em 0.25em 0em;
+  margin-top: 0.5em;
+}
+
+#chartRootParent.disabledChart {
+  display: none;
+}
+
+#chartRootParent.hiddenChart {
+  border: 1px solid #1280d72b;
+  border-right: 0px;
+  border-left: 0px;
+  padding: 0em;
+}
+
+.brandLink {
+  font-weight: bolder;
+  margin: 0px 5px;
+  font-size: 0.6875rem;
+  padding: 2px 5px;
+  background-color: #242424;
+  border-radius: 3px;
+}
+
+[data-theme="default"] .brandLink {
+  background-color: #ebebeb;
+}
+
+.earlyUser .brandLink {
+  display: none;
+}
+
+#chartHeader .brandLink {
+  color: #26a69a;
+}
+
+.brandLink:hover {
+  color: #8a8a8a;
+}
+
+#mtmChartBrandLogo {
+  width: 18px;
+}
+
+.page-positions #chartRootParent.hiddenChart {
+  border: 1px solid #1280d72b;
+  border-right: 0px;
+  border-left: 0px;
+  padding: 0em;
+}
+
+#chartRootParent.fullView {
+  
+  
+  background-color: #1d1d1d;
+  height: 100%;
+  z-index: 200;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 5%;
+  margin: 0px;
+  border-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tv-lightweight-charts {
+  
+}
+
+#lightWeightChartParent {
+  position: relative;
+}
+
+.hiddenChart #lightWeightChartParent {
+  display: none;
+}
+
+.zBroker #lightWeightChartParent .tv-lightweight-charts {
+  margin: auto;
+  height: 400px !important;
+}
+
+.kBroker #lightWeightChartParent .tv-lightweight-charts {
+  margin: auto;
+  height: 28.5em !important;
+}
+
+.fullView #lightWeightChartParent .tv-lightweight-charts {
+  height: 100% !important;
+}
+
+.fullView #lightWeightChartParent {
+  
+  
+  
+  flex: 1;
+  overflow: hidden;
+  margin-bottom: 0.4em;
+}
+
+#chartHederLeftDiv {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+#chartHeader {
+  font-size: 1em;
+  margin: 0px 0.5em;
+  
+  color: #26a69a;
+  font-weight: bold;
+}
+
+#chartControlSet {
+  display: flex;
+  align-items: center;
+}
+
+.zBroker #chartControlSet {
+  margin-right: 10px;
+}
+
+.kBroker #chartControlSet {
+  margin-right: 0.7142em;
+}
+
+.hiddenChart #chartControlSet {
+  display: none;
+}
+
+
+#chartControlSet.hasSelector {
+  align-items: flex-start;
+}
+
+.fullView #chartControlSet {
+  margin-right: 1%;
+}
+
+#chartMinButton {
+  display: none;
+}
+
+.zBroker #chartCloseButton .fa-solid {
+  font-size: 1.6rem;
+}
+
+.kBroker #chartCloseButton .fa-solid {
+  font-size: 1.82em;
+}
+
+.fullView #chartMaxButton {
+  display: none;
+}
+
+.fullView #chartMinButton {
+  display: block;
+}
+
+.fullView #chartCloseButton {
+  display: none;
+}
+
+.chartButtons {
+  
+  margin: 0.125rem 0.625rem;
+  color: #adadad;
+  font-weight: bolder;
+  text-align: center;
+
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-theme="default"] .chartButtons {
+  color: #727272;
+}
+
+.enabledTiledWindow .chartButtons {
+  font-size: 0.9em;
+  margin: 0.125rem 0.45rem;
+}
+
+.chartButtons .chartToggleLabel {
+  text-align: center;
+  line-height: 1.05;
+}
+
+.mtmSpotSelector {
+  font-size: 1em;
+  font-weight: bold;
+  min-width: 6rem;
+  background: var(--color-bg-default);
+  
+  padding: 0.1rem 0.1rem;
+  border-color: #3f3f3f;
+  border-radius: 4px;
+}
+
+[data-theme="default"] .mtmSpotSelector {
+  background-color: unset;
+
+  
+}
+
+#roiMarginAmount {
+  border-radius: 2px;
+  
+  
+  border: 1px solid #303030;
+  width: 6em;
+  text-align: center;
+  color: #797979;
+}
+
+#roiMarginAmountParent .chartToggleLabel {
+  line-height: 0.25 !important;
+  font-size: 0.95em !important;
+}
+
+#roiMarginAmount:focus {
+  border: 1px solid #545454;
+  color: unset;
+}
+
+.zBroker .chartButtons i {
+  font-size: 1.25rem;
+}
+
+.kBroker .chartButtons i {
+  font-size: 1.4285em;
+}
+
+.chartButtons input[type="checkbox"]:checked {
+  background-color: rebeccapurple;
+}
+
+a.chartButtons:hover,
+.chartButtons:hover i {
+  color: #8f8f8f;
+}
+
+#chartTextCanvas {
+  position: absolute;
+  top: 50px;
+  z-index: 500;
+}
+
+@media screen and (max-width: 1400px) {
+
+  .zBroker #lightWeightChartParent .tv-lightweight-charts {
+    margin: auto;
+    height: 350px !important;
+  }
+
+  .kBroker #lightWeightChartParent .tv-lightweight-charts {
+    margin: auto;
+    height: 24.9em !important;
+  }
+
+  .fullView #lightWeightChartParent .tv-lightweight-charts {
+    margin: auto;
+    height: 100% !important;
+  }
+}

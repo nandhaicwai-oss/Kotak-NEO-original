@@ -1,0 +1,1148 @@
+:root {
+  --fonts: Tahoma, sans-serif;
+  --page-text-color: #8e9196;
+  --page-text-color-hover: rgb(209, 209, 209);
+  --page-background-color: #000000;
+  --tab-display: grid;
+  --tab-active-color: #2f2f2f;
+  --tab-background-color: rgba(0, 0, 0, 0.03);
+  --tab-border-color: #3e3e3e;
+  --display-none: none;
+  --box-sizing: border-box;
+  --defaultTextColor: #bbb;
+  --mainBGColor: #010605;
+  --secondBGColor: #030b0a;
+
+  --mainBorderColor: #080808;
+  --secondBorderColor: #080808;
+
+  --extraLightBorder: #212121;
+  --mainBorderWidth: 1px;
+  --scaleMultiplier: 1;
+
+}
+
+[data-theme="dark"]#torpedoRoot {
+
+  --color-primary: #081614;
+  --color-light-primary: #2b7a6f;
+
+  --accent-color: #2e62cd;
+  --accent-border-color: color-mix(in srgb, var(--accent-color) 87%, black);
+  --gradientColor1: color-mix(in srgb, var(--color-primary) 87%, black);
+  --gradientColor2: color-mix(in srgb, var(--color-primary) 55%, black);
+
+  --boxShadowColor: color-mix(in srgb, var(--color-light-primary) 50%, black);
+  --containerBoxShadow:
+    -2px 0px 4px 0px color-mix(in srgb, var(--boxShadowColor) 50%, transparent);
+
+  --cardBgGradient: linear-gradient(180deg,
+      var(--gradientColor1),
+      var(--gradientColor2));
+
+  --mainBGColor: color-mix(in srgb, var(--color-primary) 25%, black);
+  --secondBGColor: color-mix(in srgb, var(--color-primary) 50%, black);
+  --thirdBGColor: color-mix(in srgb, var(--color-primary) 50%, black);
+  --color-bg-default: color-mix(in srgb, var(--color-primary) 55%, black);
+  --card-bg: color-mix(in srgb, var(--color-primary) 100%, white);
+
+  --color-bg-1: color-mix(in srgb, var(--color-primary) 70%, black);
+  --color-bg-2: color-mix(in srgb, var(--color-primary) 70%, black);
+  --list-bg-color: color-mix(in srgb, var(--color-primary) 70%, black);
+  --mainBorderColor: color-mix(in srgb, var(--color-primary) 70%, white);
+  --color-border-default: color-mix(in srgb, var(--color-primary) 95%, white);
+  --secondBorderColor: color-mix(in srgb, var(--color-primary) 95%, white);
+  --focusBorerColor: color-mix(in srgb, var(--color-primary) 80%, white);
+  --extraLightBorder: color-mix(in srgb, var(--color-primary) 80%, #000);
+  --color-border-1: color-mix(in srgb, var(--color-primary) 95%, white);
+  --color-border-2: color-mix(in srgb, var(--color-primary) 90%, white);
+  --textBox-border-1: color-mix(in srgb, var(--color-primary) 95%, white);
+
+  --modal-bg-1: color-mix(in srgb, var(--color-primary) 50%, black);
+  --modal-bg-2: color-mix(in srgb, var(--color-primary) 73%, #000000);
+  --modalBorder: color-mix(in srgb, var(--color-primary) 68%, rgb(128, 128, 128));
+  --rowHoverColor: color-mix(in srgb, var(--color-primary) 98%, white);
+  --statusBarBG: color-mix(in srgb, var(--color-primary) 75%, #000000);
+  --scrollbarBG: color-mix(in srgb, var(--color-primary) 75%, #ffffff);
+  --scrollbarHandle: color-mix(in srgb, var(--color-primary) 98%, #ffffff);
+
+
+  --page-background-color: color-mix(in srgb, var(--color-primary) 50%, black);
+  --page-border-color: color-mix(in srgb, var(--color-primary) 68%, rgb(128, 128, 128));
+  --tab-active-color: color-mix(in srgb, var(--color-primary) 95%, white);
+  --tab-background-color: color-mix(in srgb, var(--color-primary) 40%, black);
+  --tab-border-color: color-mix(in srgb, var(--color-primary) 75%, white);
+
+  scrollbar-color: var(--scrollbarBG) var(--scrollbarHandle);
+}
+
+html,
+body {
+  font-size: 16px !important;
+}
+
+body {
+  font-size: 14px !important;
+}
+
+option {
+  font-size: calc(var(--scaleMultiplier) * 1em);
+}
+
+
+
+#torpedoRoot {
+  transform-origin: top left;
+  scale: var(--scaleMultiplier);
+  width: calc(100% / var(--scaleMultiplier));
+  height: calc(100% / var(--scaleMultiplier));
+  pointer-events: none;
+
+  inset: 0;
+  position: fixed;
+  overflow: hidden;
+  z-index: 12;
+}
+
+#torpedoRoot.compactView {
+  transform-origin: top left;
+  scale: var(--scaleMultiplier);
+  width: calc(100% / var(--scaleMultiplier));
+  height: calc(100% / var(--scaleMultiplier));
+  pointer-events: none;
+
+  inset: 0;
+  position: fixed;
+  overflow: hidden;
+  z-index: 12;
+  line-height: 1.2;
+}
+
+#torpedoRoot>* {
+  pointer-events: all;
+}
+
+body.visibleApp {
+  cursor: unset !important;
+}
+
+#torpedoRoot input {
+  line-height: normal;
+  background-color: transparent;
+}
+
+#torpedoBG {
+  inset: 0;
+  opacity: 0.35;
+  z-index: 45;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+
+
+#torpedoRoot div {
+  box-sizing: content-box;
+}
+
+#torpedoApp {
+  
+  
+  transform-origin: center;
+  
+  
+  font-size: var(--baseFontWidth);
+  inset: 0;
+  z-index: 62;
+  padding: 3px;
+  position: fixed;
+  text-align: center;
+  
+  width: 100%;
+  height: 100%;
+  margin: auto auto 0 auto;
+  border-radius: 10px;
+  
+  
+  background-color: var(--mainBGColor);
+  display: flex;
+  flex-direction: column;
+  z-index: 46;
+}
+
+#torpedoApp:has(.fullView) {
+  z-index: 65;
+}
+
+
+
+#torpedoApp .tApp {
+  margin-top: 3em;
+}
+
+#torpedoTopStaticSection {
+  position: fixed;
+  
+}
+
+.topMenuBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  background-color: var(--secondBGColor);
+  
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 1px rgb(0 0 0 / 30%);
+  z-index: 195;
+  padding: 0.25em;
+  height: 3em;
+  font-weight: 600;
+}
+
+.topLeftExitBtn {
+  padding: 0em 1em;
+  font-size: 1.8em;
+  color: #ff0039;
+}
+
+.indicesPriceParent {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  
+}
+
+.indicesPriceParent .indicesNameRow:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.indicesPriceParent .indicesPriceRow:hover {
+  cursor: pointer;
+  opacity: 0.9;
+
+}
+
+.indicesSubInfoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.indicesSubInfoColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.indicesPriceSet:hover {
+  
+}
+
+.indicesSubInfo {
+  font-size: 0.9em;
+}
+
+.indicesPriceRow {
+  display: flex;
+  gap: 0em;
+  align-items: center;
+}
+
+.indicesPrice {}
+
+.indicesChange {
+  font-size: 0.9em;
+  min-width: 8ch;
+}
+
+.indicesChangePercent {
+  text-align: left;
+  font-size: 0.9em;
+  min-width: 7ch;
+}
+
+.stickyTopCenterParent {
+  position: fixed;
+  z-index: 49;
+  width: auto;
+  margin: auto;
+  display: flex;
+  
+  bottom: 1.6em;
+}
+
+.appShowBtnParent {
+  background: var(--statusBarBG);
+  transition: transform 0.15s ease;
+
+  width: 4em;
+  height: 2em;
+  border-radius: 200px 200px 0 0;
+  
+
+  border: 2px solid;
+  border-color: var(--modalBorder);
+  border-style: solid solid none solid;
+}
+
+
+.appShowBtnParent:hover {
+  
+  cursor: pointer;
+  
+}
+
+.appShowBtnParent i:hover {
+  
+  transform: scale(1.05);
+}
+
+.appShowBtn {
+  display: block;
+  position: relative;
+  top: -1em;
+  font-size: 1.3em;
+}
+
+.appShowBtnParent i {
+  position: relative;
+  z-index: 1;
+  top: 0.3em;
+  
+  
+}
+
+.appShowBtnParent .lockSpan i {
+  
+  font-size: 1.2em !important;
+}
+
+.showBtn {
+  display: block !important;
+}
+
+.hideBtn {
+  display: none !important;
+}
+
+.visibleApp .showBtn {
+  display: none !important;
+}
+
+.visibleApp .hideBtn {
+  display: block !important;
+  color: #ff0039;
+}
+
+#stickyRightDiv {
+  
+  z-index: 150;
+  position: absolute;
+  top: 4.5em;
+  right: 0em;
+  
+  background: #353535;
+  background: var(--color-bg-default);
+  padding: 0.75em 0.75em;
+  border-radius: 4px;
+  margin-right: 0px;
+  border: solid #b4b4b4 3px;
+  border-color: var(--color-text-default);
+  border-color: #617df5;
+  border-right: 0;
+}
+
+#stickyRightDiv:hover {
+  cursor: pointer;
+}
+
+.data-table th {
+  pointer-events: none;
+}
+
+.rowUpDown {
+  display: flex;
+  gap: 0.45em;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowUpDown .fa-solid {
+  font-size: 1.25em;
+  color: #aeaeae;
+  cursor: pointer;
+}
+
+#torpedoRoot .tApp {
+  display: flex;
+  height: calc(100vh /var(--scaleMultiplier));
+  overflow: hidden;
+}
+
+.container {
+  background-color: var(--secondBGColor);
+  margin: 1.5em 0.35em 0 0.35em;
+  border-radius: 8px;
+  border: 0;
+  box-shadow: rgb(123 123 123 / 14%) -2px 0px 4px 0px;
+  box-shadow: var(--containerBoxShadow);
+
+}
+
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0rem;
+  flex: 10 1 auto;
+  
+  
+  
+
+  flex: 0 0 22%;
+  max-width: 22%;
+  box-sizing: border-box !important;
+}
+
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  
+  overflow-y: auto;
+  
+  
+  
+  padding-bottom: 10em;
+  flex: 0 0 45%;
+  max-width: 45%;
+  box-sizing: border-box !important;
+}
+
+.noTiledWindow .centerContainer {
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+.rightContainer {
+  display: flex;
+  padding: 0.5em 0.25em;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-right: 0;
+  
+  
+  padding-bottom: 3em;
+  min-width: 23em;
+
+  flex: 0 0 32%;
+  max-width: 32%;
+  box-sizing: border-box !important;
+
+}
+
+.noTiledWindow .leftContainer {
+  
+
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.noTiledWindow .centerContainer {
+  margin-right: 8em;
+}
+
+.brandLink {
+  display: none;
+}
+
+.noTiledWindow .brandLink {
+  display: unset;
+}
+
+.fullView .brandLink {
+  display: unset;
+}
+
+.groupDiv {
+  
+}
+
+.groupedBody {
+  
+}
+
+.straddleIVSection {
+  position: relative;
+  border-top: 1px solid var(--color-border-1);
+  box-shadow: inset #0000007d 0px 2px 4px;
+  
+}
+
+
+#indexMetaDataWindow .searchParentDiv {
+  gap: 0.25em;
+}
+
+.watchListOptionSetParent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  
+  
+  border: 1px solid var(--color-border-1);
+  
+  padding: 0.5em 0em;
+  border-style: none none solid none;
+  box-shadow: inset #0000007d 0px -2px 4px;
+  margin-bottom: 0.2em;
+}
+
+.watchListOptionSetParent .floatingHeader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watchListOptionSetParent .floatingHeader .floatingToggle {
+  position: absolute;
+  margin-top: 0.6em;
+  font-size: 1.2em;
+}
+
+.watchListOptionSetContainer {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.hiddenWatchListOption .watchListOptionSetContainer {
+  display: none;
+}
+
+.watchListOptionSet {
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
+
+.watchListOptionSet .rowUpDown .fa-solid {
+  font-size: 1.1em;
+}
+
+.watchListOptionSet .rowUpDown span {
+  min-width: 1.8em;
+  font-weight: 600;
+}
+
+#indexMetaDataWindowParent {
+  
+}
+
+.watchListOptionSet select {
+  text-align: center;
+  min-width: 2em;
+  background-color: #1a1a1a;
+  
+  cursor: pointer;
+  border: 1px solid #323232;
+  outline: none;
+  padding: 0px 10px;
+  
+  font-size: 1em;
+  border-radius: 4px;
+}
+
+.watchListOptionSet .rowTitle {
+  font-size: 0.9em;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.watchListChain {
+  display: flex;
+  margin: 0em;
+  overflow: hidden;
+  flex-direction: column;
+  flex: 1;
+}
+
+.watchListChain .watchListParent {
+  display: flex;
+  flex-direction: column;
+  
+  
+  overflow-y: hidden;
+  flex-basis: 100%;
+  overflow: hidden;
+}
+
+.watchListChain .watchListSubPart {
+  flex-basis: 50%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+
+.watchListChain table tbody td {
+  padding: 0.25em 0;
+  border: 1px #232325;
+  border-collapse: collapse;
+  border-style: solid none;
+}
+
+.watchListRow {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--extraLightBorder);
+  padding: 0.5em 1em;
+  align-items: baseline;
+}
+
+.watchListRow:hover {
+  background-color: var(--rowHoverColor);
+}
+
+.watchlistRowHandle {
+  display: none;
+}
+
+.customWatchListParent .watchlistRowHandle {
+  display: block;
+  position: absolute;
+  
+  cursor: grab;
+  
+  color: #888;
+  opacity: 0;
+  transition: opacity .2s;
+  user-select: none;
+}
+
+.customWatchListParent .watchListRow:hover .watchlistRowHandle {
+  opacity: 1;
+  
+}
+
+.customWatchListParent .watchlistRowHandle:active {
+  cursor: grabbing;
+}
+
+.straddleWatchList .watchListRow {
+  border-width: 0px;
+}
+
+.watchListChain .watchList_strike:hover {
+  
+}
+
+.watchListChain .colorized .ceRow .watchList_strike {
+  color: #e7bb53;
+}
+
+.watchListChain .straddleWatchList .ceRow {
+  border-bottom: 2px solid #3c3c3c;
+}
+
+.watchListChain .colorized .peRow .watchList_strike {
+  color: #a2a4eb;
+}
+
+
+
+.watchListChain .watchList_oi_parent {
+  flex: 1;
+  height: 1em;
+  padding: 0em 0.5em;
+}
+
+.watchListChain .watchList_oi {
+  background-color: #00ff3412;
+  height: 100%;
+  width: 17%;
+}
+
+.watchListChain .watchList_change {
+  margin-left: auto;
+  margin-right: 0.65em;
+  font-size: 0.9em;
+  opacity: 0.5;
+  text-align: right;
+}
+
+.watchListChain .watchList_ltp {
+  text-align: right;
+  min-width: 9ch;
+}
+
+.watchListChain .changeDirection {
+  
+}
+
+.watchListChain .fa-caret-up {
+  color: #45cf70;
+}
+
+.watchListChain .fa-caret-down {
+  color: #f50808;
+}
+
+#indexMetaDataWindowParent .ulParentDiv {
+  background-color: var(--list-bg-color) !important;
+}
+
+#indexMetaDataWindowParent {
+  position: relative;
+  border: 0px solid var(--extraLightBorder);
+}
+
+
+
+.customWatchListParent {
+  display: flex;
+  flex: 1;
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.watchListSelectorParent {
+  background: var(--thirdBGColor);
+  display: flex;
+  
+  border-top: 1px solid var(--secondBorderColor);
+  margin-bottom: 0.75em;
+  bottom: 2em;
+}
+
+.watchListSelector {
+  padding: 0.1em 1.2em;
+  
+  
+  border-image: initial;
+  
+  color: rgb(110, 110, 110);
+  border-right: 2px solid var(--secondBorderColor);
+}
+
+.watchListSelector:hover {
+  cursor: pointer;
+}
+
+.watchListSelector.selectedWatchList {
+  border-top: 2px solid rgb(59, 131, 212) !important;
+  color: rgb(59, 131, 212) !important;
+}
+
+.CustomwatchListSearchParent {
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.customWatchListParent .searchParentDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.85em;
+  padding: 0.1em 0.35em;
+}
+
+.customWatchListParent .searchButtonSymbol {
+  cursor: pointer;
+  color: #616161;
+}
+
+.customWatchListParent .searchClose {
+  color: #989898;
+  font-size: 1.3em;
+  margin: 0.35em 0px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.customWatchListParent .searchClose:hover {
+  opacity: 0.8;
+}
+
+.customWatchListParent .watchListInfo {
+  display: flex;
+  font-weight: bold;
+  margin-left: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 0.7em;
+  color: #707070;
+}
+
+.customWatchListParent .basketSearchDiv input {
+  font-size: 0.9em;
+  outline: 1px solid #81818112;
+  padding: 6px 6px;
+  text-align: left;
+  caret-color: #5c5c5c;
+  border-color: #5353534d;
+  border-width: 1px;
+  border-radius: 2px;
+}
+
+[data-theme="default"] .customWatchListParent .basketSearchDiv input {
+  border-width: 1px;
+  background: #f9f9f9;
+}
+
+.customWatchListParent .ulParentDiv {
+  z-index: 151;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.5em;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mainBGColor) !important;
+  border-bottom: 1px solid #7171714f;
+}
+
+.customWatchListParent .basketSearchDiv ul {
+  margin: 0px;
+  width: 100%;
+  font-size: 0.9em;
+  padding: 0px;
+  overflow-y: auto;
+}
+
+.customWatchListParent .basketSearchDiv ul li {
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-border-1);
+  margin-bottom: 0;
+  padding: 8px 15px;
+  position: relative;
+}
+
+.customWatchListParent .basketSearchDiv ul li.existingSymbol {
+  color: #4c4c4c;
+}
+
+.customWatchListParent .basketSearchDiv ul li:hover {
+  background-color: var(--color-bg-1);
+  box-shadow: 0px 2px 0px var(--color-border-1);
+}
+
+.customWatchListParent .basketSearchDiv ul li.active {
+  background-color: #080808;
+}
+
+[data-theme="default"] .customWatchListParent .basketSearchDiv ul li:hover {
+  background-color: #e7e7e7;
+}
+
+[data-theme="default"] .customWatchListParent .basketSearchDiv ul li.active {
+  background-color: #e7e7e7;
+}
+
+.customWatchListParent .basketSearchDiv ul:first-child {
+  padding-top: 2px;
+}
+
+.customWatchListPart {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.watchListRow {
+
+  
+  position: relative;
+  padding: 0.5em 1em;
+  padding-left: 0.45em;
+}
+
+.customWatchListParent .watchListRow .watchList_strike {
+  margin-left: 1.1em;
+}
+
+
+
+.customWatchListParent .watchListRow.dragging {
+  opacity: 0.4;
+}
+
+
+#watchListRowActionBar {
+  background: var(--rowHoverColor);
+  position: absolute;
+  left: 13em;
+  bottom: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  
+  display: flex;
+  gap: 0.6em;
+  padding: 0.2em 0.5em;
+  align-items: center;
+  border-radius: 4px;
+  pointer-events: auto;
+}
+
+.watchListActionBtn {
+  background-color: var(--color-bg-default);
+  padding: 0.15em 1.15em;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9em;
+  color: #ffffff
+}
+
+.watchListActionBtn:hover {
+  opacity: 0.80;
+}
+
+.buyActionBtn {
+  background-color: var(--buyLightColor);
+}
+
+.sellActionBtn {
+  background-color: var(--sellLightColor);
+}
+
+.deleteActionBtn {
+  display: none;
+}
+
+.customWatchListParent .deleteActionBtn {
+  display: block;
+}
+
+.positionParent {
+  flex: 1;
+}
+
+.sectionHeader {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  
+  padding: 1em 0em;
+  
+}
+
+.positionParent .sectionHeader .page-title {
+  cursor: pointer;
+}
+
+.orderSetParent .sectionHeader .page-title {
+  cursor: pointer;
+}
+
+.positionToolbar {
+  
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  justify-content: flex-end;
+  font-size: 0.7em;
+}
+
+.positionToolbar .tabContent {
+  display: flex;
+}
+
+.positionParent .instrument span.greyed {
+  color: var(--color-text-1);
+}
+
+.positionParent .instrument span:hover {
+  cursor: pointer;
+  color: #e25f5b !important;
+}
+
+.data-table-header,
+.tApp .page-title {
+  padding-bottom: 0px;
+}
+
+.tApp .page-title {
+  
+}
+
+.change-percent {
+  font-size: 0.625em;
+}
+
+.noOrderSection,
+.noPositionSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  color: #969696;
+  align-items: center;
+}
+
+.orderSetParent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.orderSetParent table {
+  width: 100%;
+}
+
+.ordersParent {}
+
+.ordersParent .instrument span:hover {
+  cursor: pointer;
+  color: #e25f5b !important;
+}
+
+.ordersParent .data-table table th {
+  padding: 14px 4px;
+}
+
+.ordersParent .data-table table td {
+  padding: 10px 4px;
+}
+
+.ordersParent .data-table table .quantity {
+  white-space: nowrap;
+}
+
+.ordersParent .productType {}
+
+.ordersParent .cancel-order {
+  padding: 0 !important;
+}
+
+.ordersParent .cancel-order i {
+  font-size: 1.2em;
+  
+}
+
+.ordersParent .cancel-order i:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  scale: 1.1;
+}
+
+#marketDepthWindow .modal-container {
+  background-color: var(--modal-bg-2);
+  width: 23em;
+  padding: 0px 15px;
+  
+  border: 2px solid var(--modalBorder);
+
+
+  border-radius: 4px;
+  
+  z-index: 56;
+  position: fixed;
+  
+  margin: auto;
+  
+  
+  
+  height: 8em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+  padding: 0.5em;
+  font-weight: 600;
+}
+
+#marketDepthWindow .depthTopBar {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#marketDepthWindow .depthHeaderInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -0.85em;
+}
+
+#marketDepthWindow .symbolHeaderName {
+  font-size: 1.05em;
+}
+
+#marketDepthWindow .symbolPrice {
+  font-size: 1.15em;
+  margin: 0px 3px;
+}
+
+#marketDepthWindow .symbolChange {
+  font-size: 1.02em;
+  margin: 0px 3px;
+  color: #888888;
+  text-align: left;
+}
+
+#marketDepthWindow .depthSubInfoRow {
+  display: flex;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+
+#marketDepthWindow .depthSubColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.indexMetaPriceInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+#marketDepthWindow .subInfoHeader {
+  font-size: 0.9em;
+  color: #7b7b7b;
+}
+
+
+#marketDepthWindow .depthsubInfo {}
+
+
+.tiledWindow .secondaryChartButtons {
+  display: none;
+}
+
+
+@media screen and (max-width: 1600px) {
+  #indexMetaDataWindow .rowValue {
+    min-width: 10ch;
+  }
+
+  .tiledWindow .watchListChain {
+    font-size: 0.9em;
+  }
+
+}
+
+
+@media screen and (max-width: 1400px) {}

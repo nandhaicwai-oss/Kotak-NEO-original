@@ -1,0 +1,484 @@
+html {
+    --rootMultiplier: 1;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+flutter-view #iframe {
+    height: 98% !important;
+}
+
+#neoTradeAuthWindowParent {
+    z-index: 50;
+    display: none;
+}
+
+.neoAuthWindowBG {
+    inset: 0;
+    
+    z-index: 61;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #111111;
+}
+
+.neoAuthWindowBG.hybrid {
+    background-color: #1111119d;
+}
+
+.neoTradeAuthContainer {
+    position: fixed;
+    inset: 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 20px;
+    z-index: 62;
+}
+
+.neoTradeAuthWindow {
+    font-family: Tahoma, sans-serif !important;
+    position: relative;
+    padding: 1em 1em 0em 1em;
+    width: 35em;
+    
+    margin: auto;
+    border-radius: 10px;
+    border: 3px solid var(--modalBorder);
+    background-color: var(--modal-bg-1);
+    display: flex;
+    flex-direction: column;
+    
+    
+    max-height: calc(100vh - 40px);
+    box-shadow: 0 1px 5px #0d0d0d;
+    overflow: auto;
+    
+    box-sizing: border-box;
+}
+
+
+.loginLogoHeader {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 0em 0em 1em 0em;
+    align-items: center;
+    gap: 0.35em;
+    justify-content: center;
+}
+
+.loginInputParent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9em;
+}
+
+
+.loginInputRow {
+    display: flex;
+    flex-direction: row;
+    gap: 0.9em;
+    align-items: center;
+}
+
+.loginInputHeader {
+    
+    text-align: right;
+    color: #6b6b6b;
+    font-weight: bold;
+    font-size: 0.85em;
+    flex-basis: 30%;
+}
+
+.loginInputValue {
+    flex-basis: 70%;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.15em;
+    font-size: 0.85em;
+    color: #2f84ed;
+}
+
+.loginInput,
+input[type=password] {
+    font-weight: bold;
+    padding: 0.5em 0.5em;
+    background-color: #141414;
+    border: 1px solid var(--textBox-border-1);
+    color: #adadad;
+    border-radius: 2px;
+    font-size: 0.9em;
+    flex-basis: 70%;
+}
+
+.loginInput.readonly {
+    color: #3c3c3c;
+    user-select: none;
+    
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+input::placeholder {
+    color: #474747;
+    font-style: italic;
+}
+
+.loginInputWarningFooter {
+    margin: 0.7em 0em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.loginInputWarningMessage {
+    font-weight: bold;
+    
+    font-size: 0.95em;
+}
+
+
+.loginInput:focus,
+input[type=password] :focus {
+    border: 2px solid var(--focusBorerColor);
+    background: #0e0e0e;
+}
+
+.loginInputBtn {
+    background-color: #2f84ed;
+    text-align: center;
+    border-radius: 4px;
+    padding: 0.5em;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    
+    width: 7em;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.loginInputBtn:hover {
+    opacity: 0.9;
+}
+
+.neoTradeLogOutBtn {
+    background-color: #d13f3f;
+}
+
+.neoTradeClose {
+    background-color: var(--color-bg-default);
+    border: 1px solid;
+    border-color: var(--color-border-2);
+
+
+}
+
+.loginInputFooter {
+    margin-top: 2em;
+    display: flex;
+}
+
+.topRightMenu {
+    display: none;
+}
+
+.topRightLoginBtn {
+    
+    background-color: #ff0039;
+    text-align: center;
+    border-radius: 4px;
+    padding: 0.19em 0.6em;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    
+    
+    
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.user-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.user-btn {
+    
+}
+
+.user-btn:hover {
+    opacity: 0.9;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: var(--modal-bg-2);
+    border-radius: 0px;
+    z-index: 1;
+    border: 2px var(--modalBorder);
+    overflow: hidden;
+    padding-top: 5px;
+    animation: fadeIn 0.2s ease;
+    border-style: none solid solid solid;
+}
+
+.user-menu:hover .dropdown {
+    display: block;
+}
+
+.dropdown div {
+    display: block;
+    color: #e3e3e3;
+    padding: 0.7em;
+}
+
+.dropdown div:hover {
+    background-color: var(--rowHoverColor);
+    cursor: pointer;
+}
+
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown a {
+    display: block;
+    color: #333;
+    padding: 10px 14px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#statusRootDiv {
+    border-color: var(--modalBorder);
+    border-style: solid none none none;
+    border-width: 2px;
+}
+
+.groupViewSettingDropdown {
+    background-color: var(--modal-bg-1);
+    border-color: var(--modalBorder);
+}
+
+.groupDiv {
+    border-top-color: var(--modalBorder);
+}
+
+.groupedBody {
+    border-bottom-color: var(--modalBorder);
+}
+
+.groupDiv td {
+    background-color: transparent !important;
+}
+
+.payoffChart td {
+    background-color: transparent !important;
+}
+
+.groupMetaPart {
+    border-color: var(--color-border-1);
+}
+
+#positionSwitcherModal .modal-container {
+    background: var(--cardBgGradient);
+    
+}
+
+.groupExitParentRow td:hover {
+    background-color: unset !important;
+}
+
+.groupExitParentRow {
+    display: none;
+}
+
+.groupExitParent {
+    
+    margin: 1rem 0rem;
+}
+
+.groupExitBtnContainer {
+    display: flex;
+    gap: 1em;
+
+}
+
+.groupClearBtn {
+    color: white;
+    background-color: #555555;
+    border-color: #555555;
+    font-weight: 600;
+}
+
+.groupExitBtn {
+    color: white;
+    background-color: #ff0039;
+    border-color: #ff0039;
+    font-weight: 600;
+}
+
+.k-notification-container {
+    position: fixed;
+    bottom: 3em;
+    right: 1em;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+
+.k-notification {
+    position: relative;
+    min-width: 18em;
+    max-width: 25em;
+    padding: 0.75em 1.5em;
+    border-radius: 4px;
+    color: white;
+    
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: k-slideIn 0.2s ease;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    
+    background: var(--cardBgGradient);
+    border: 2px solid;
+    border-style: solid solid solid none;
+    border-color: var(--color-border-2);
+}
+
+.k-notification .leftNotificationBar {
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    width: 10px;
+    right: 0px;
+    top: 0;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.k-notification.success .leftNotificationBar {
+    background-color: #28a745;
+}
+
+.k-notification.error .leftNotificationBar {
+    background-color: #dc3545;
+}
+
+.k-notification.info .leftNotificationBar {
+    background-color: #007bff;
+}
+
+.k-notification.warning .leftNotificationBar {
+    background-color: #ffc107;
+    
+}
+
+.k-notification .k-close-btn {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #8f8f8f;
+}
+
+.k-notification .k-header {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.k-notification.success .k-header {
+    color: #28a745;
+}
+
+.k-notification.error .k-header {
+    color: #dc3545;
+}
+
+.k-notification.info .k-header {
+    color: #007bff;
+}
+
+.k-notification.warning .k-header {
+    color: #ffc107;
+}
+
+.k-notification .k-message {
+    
+    
+    color: #b3b3b3;
+}
+
+.select-fa {
+    pointer-events: none;
+    position: absolute;
+    right: 5px;
+}
+
+@keyframes k-slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notificationBar {
+    position: fixed;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #323232;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: top 0.5s ease;
+    font-family: sans-serif;
+}
+
+.notificationBar.show {
+    top: 20px;
+}
+
+.notificationBar.hidden {
+    top: -60px;
+}

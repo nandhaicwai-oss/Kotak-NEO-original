@@ -1,0 +1,638 @@
+#orderPlacementModal .modal-container {
+  background: var(--cardBgGradient);
+  
+  width: 52em;
+}
+
+#orderPlacementModal {
+  
+  
+  
+  
+  text-align: center;
+  display: flex;
+  
+  
+  margin: auto;
+  padding: 3px;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: var(--baseFontWidth);
+}
+
+#orderPlacementModal .modal-container {
+  
+  font-weight: bold;
+  width: 40em;
+  padding: 0px 15px;
+  border: 2px solid #8585852e;
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: 0px;
+  z-index: 56;
+  position: fixed;
+  bottom: 0;
+  
+  margin-bottom: calc(var(--statusBarHeight) + 0.1em);
+
+  border: 2px solid;
+  border-bottom: 0px;
+  color: rgb(202, 202, 202);
+  animation: modalWindowFadeIn 0.10s ease-in-out;
+}
+
+
+
+#orderPlacementModal.buyWindow .modal-container {
+  border-color: var(--buyColor);
+}
+
+#orderPlacementModal.sellWindow .modal-container {
+  border-color: var(--sellColor);
+}
+
+.buyWindow .sliderF .slider.round {
+  background-color: var(--buyColor);
+}
+
+.sellWindow .sliderF input:checked+.slider {
+  background-color: var(--sellColor);
+}
+
+#orderPlacementModal .instHeaderSection {
+  display: flex;
+  justify-content: center;
+  margin-top: -1em;
+}
+
+#orderPlacementModal .instHeader {
+  background: #1e1e1e;
+  padding: 0.2em 1em;
+  border: 2px solid;
+  font-size: 1em;
+  border-radius: 4px;
+  
+  
+}
+
+#orderPlacementModal.sellWindow .instHeader {
+  border-color: var(--sellColor);
+}
+
+#orderPlacementModal.buyWindow .instHeader {
+  border-color: var(--buyColor);
+}
+
+#orderPlacementModal .dragHeaderHandle {
+  cursor: move;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+[data-theme="default"] #orderPlacementModal .modal-container {
+  border-color: #86868670;
+}
+
+#orderPlacementModal .modal-header {
+  font-weight: bold;
+  margin: 7px 0px;
+  
+  border-bottom: 0px;
+}
+
+#orderPlacementModal .centerHeaderParent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+#orderPlacementModal.modify .centerHeaderParent .rowStrike {
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+#orderPlacementModal.modify .buySellSwitch {
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+#orderPlacementModal .modal-footer {
+  border-top: 0px;
+  margin-top: 0px;
+  padding: 5px;
+  margin: 5px 0px;
+  border-radius: 4px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[data-theme="default"] #orderPlacementModal .modal-footer {
+  background-color: #b0b0b01a;
+}
+
+#orderPlacementModal .modal-body .modalBodyBottomDiv {
+  margin: 12px 0px;
+  margin: 12px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#orderPlacementModal .fa-solid:hover {
+  opacity: 0.8;
+}
+
+#orderPlacementModal .modalBodyBottomDiv .modalBottomDivChild {
+  flex-basis: 33%;
+}
+
+#orderPlacementModal .modal-header {
+  display: flex;
+}
+
+#orderPlacementModal .sliderF .switch {
+  scale: 1.2;
+}
+
+#orderPlacementModal .modal-header .orderDayType {
+  user-select: none;
+  cursor: pointer;
+  font-size: 0.75em;
+  border: 1px solid;
+}
+
+#orderPlacementModal.modify .modal-header .orderDayType {
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+#orderPlacementModal .modal-header .headerPrice {
+  font-size: 1.15em;
+  margin: 0px 3px;
+}
+
+#orderPlacementModal .modal-header .headerChange {
+  font-size: 1.02em;
+  margin: 0px 3px;
+  color: #888888;
+  text-align: left;
+}
+
+#orderPlacementModal .depthInfoParent {
+  display: flex;
+  
+  padding-bottom: 0.1em;
+}
+
+#orderPlacementModal .depthInfoParent th {
+  font-size: 0.9em;
+  opacity: 0.5;
+  
+  font-weight: normal;
+}
+
+
+
+.extraPriceInfo {
+  
+  border-radius: 6px;
+  margin-top: 10px;
+  display: none;
+}
+
+.expanded .extraPriceInfo {
+  display: block;
+}
+
+.depthInfoHeader {
+  
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+  user-select: none;
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 4px;
+  color: #999999;
+  gap: 1em;
+  margin-top: -2.5em;
+}
+
+.depthInfoHeader .fa-solid {
+  font-size: 1.5em;
+}
+
+.expanded .depthInfoHeader .fa-solid {
+  font-size: 1.7em;
+}
+
+.expanded .depthInfoHeader {
+
+  margin-top: -1.5em;
+  margin-bottom: -1em;
+}
+
+.depthInfoParent {
+  padding: 10px;
+  display: none;
+  
+}
+
+
+
+
+
+.toggle-icon {
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+
+.expanded .toggle-icon {
+  transform: rotate(90deg);
+}
+
+
+#orderPlacementModal .bidDepthInfo,
+#orderPlacementModal .askDepthInfo {
+  flex-basis: 50%;
+
+}
+
+#orderPlacementModal .bidDepthInfo {
+  border-right: 1px solid #303030;
+}
+
+
+
+#orderPlacementModal .bidDepthInfo .depthPrice {
+  
+  color: var(--buyColor);
+
+  padding: 0em 1em;
+  min-width: 9ch;
+}
+
+#orderPlacementModal .bidDepthInfo .depthQuantity {
+  
+  color: var(--buyColor);
+
+
+  padding: 0em 1em;
+  min-width: 9ch;
+
+}
+
+#orderPlacementModal .askDepthInfo .depthPrice {
+  
+  color: var(--sellColor);
+  padding: 0em 1em;
+  min-width: 9ch;
+}
+
+#orderPlacementModal .askDepthInfo .depthQuantity {
+  
+  color: var(--sellColor);
+  padding: 0em 1em;
+  min-width: 9ch;
+}
+
+#orderPlacementModal .lotAmount {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+#orderPlacementModal .priceSetRowParent {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em 0em;
+  border-block: 1px solid var(--color-border-1);
+  margin: 1em 0em;
+}
+
+#orderPlacementModal .priceSetColumn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2em;
+  justify-content: center;
+}
+
+#orderPlacementModal .orderRadioSet {
+  display: flex;
+  gap: 1.5em;
+  
+}
+
+#orderPlacementModal .orderRadioSet input:hover {
+  cursor: pointer;
+}
+
+#orderPlacementModal .orderRadioSet .su-radio-label:hover {
+  cursor: pointer;
+}
+
+#orderPlacementModal .su-input-group {
+  margin-bottom: 0.1em;
+}
+
+#orderPlacementModal .su-radio-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+#orderPlacementModal .su-radio-wrap input {
+  visibility: hidden;
+}
+
+#orderPlacementModal .su-radio-wrap label {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+#orderPlacementModal .su-radio-wrap label::before {
+  content: "";
+  background-color: #161616;
+  border: 0.1em solid #696969;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 50%;
+  width: 0.25em;
+  height: 0.25em;
+  margin: -0.15em 0.4em 0 0;
+  padding: 0.3em;
+  display: inline-block;
+}
+
+#orderPlacementModal .su-radio-wrap .su-radio:checked+label::before {
+  
+  box-shadow: inset 0px 0px 0px 2px rgb(0, 0, 0);
+  border: 0.2em solid purple;
+  padding: 0.3em;
+  border: 0.2em solid;
+}
+
+#orderPlacementModal.buyWindow .su-radio-wrap .su-radio:checked+label::before {
+  
+  background-color: var(--buyColor);
+  border-color: var(--buyColor);
+}
+
+#orderPlacementModal.sellWindow .su-radio-wrap .su-radio:checked+label::before {
+  
+  background-color: var(--sellColor);
+  border-color: var(--sellColor);
+}
+
+#orderPlacementModal .su-input-group input {
+  width: 5em;
+  padding: 0.2em 0;
+  text-align: center;
+  font-size: 1.1em;
+  border-radius: 0.2em;
+  
+}
+
+#orderPlacementModal .priceTypeHeader {
+  
+}
+
+#orderPlacementModal .priceSetColumn.disabled .su-input-group input {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#orderPlacementModal .priceSetColumn.disabled .priceTypeHeader {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+#orderPlacementModal .modal-footer .row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#orderPlacementModal .modal-footer button {
+  min-width: 6em;
+  min-height: 2.5em;
+}
+
+#orderPlacementModal.buyWindow .modal-footer .buttonExecute {
+  background-color: var(--buyColor);
+  border-color: var(--buyColor);
+}
+
+#orderPlacementModal.sellWindow .modal-footer .buttonExecute {
+  background-color: var(--sellColor);
+  border-color: var(--sellColor);
+}
+
+#orderPlacementModal .modal-footer button {
+  font-size: 1.05em;
+}
+
+#orderPlacementModal .stateInfo {
+  flex: 1 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.prem #orderPlacementModal .executeButtonLock {
+  display: none;
+}
+
+.prem #orderPlacementModal .executeButtonText {
+  display: block;
+}
+
+#orderPlacementModal .executeButtonLock {
+  display: block;
+}
+
+#orderPlacementModal .executeButtonText {
+  display: none;
+}
+
+input[type="checkbox"] {
+  accent-color: #4caf50;
+  
+}
+
+#orderPlacementModal .posExpiry select {
+  
+  background: transparent;
+  padding: 2px 5px;
+}
+
+[data-theme="default"] #orderPlacementModal .posExpiry select {
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+}
+
+#orderPlacementModal .posExpiry select * {
+  background: var(--color-bg-default);
+  padding: 2px 5px;
+}
+
+#orderPlacementModal .instInfoRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4em;
+  align-items: center;
+}
+
+#orderPlacementModal .instInfoRow option {
+  padding: 0;
+}
+
+#orderPlacementModal .orderPlacementExpiry select {
+  padding: 0.2em 0.7em;
+  
+  
+  
+}
+
+#orderPlacementModal .posBuySellType {
+  cursor: pointer;
+  user-select: none;
+  min-width: 3em;
+}
+
+#orderPlacementModal .posBuySellType span {
+  border: 1px solid;
+  font-size: 0.645em;
+}
+
+#orderPlacementModal .posCallPutType {
+  
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 0.2em;
+}
+
+#orderPlacementModal .posCallPutType span {
+  background: #c89f2a4f;
+  color: #ffffff;
+  padding: 1px 9px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+  border: 1px solid;
+  border-color: #9c9c9c61;
+}
+
+[data-theme="default"] #orderPlacementModal .posCallPutType span {
+  color: #000;
+}
+
+#orderPlacementModal .posCallPutType span.call {
+  
+  background-color: #9d5f004a;
+}
+
+#orderPlacementModal .posCallPutType span.put {
+  
+  background-color: #2ac89c2b;
+}
+
+[data-theme="default"] #orderPlacementModal .posCallPutType span.put {
+  
+  background-color: #2ac89c59;
+}
+
+
+
+#orderPlacementModal .instDayInfoParent {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5em 0em;
+  
+  border-radius: 8px;
+  margin: 0.4em 0em;
+  background: var(--card-bg);
+}
+
+#orderPlacementModal .instDayInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+}
+
+#orderPlacementModal .instDayInfoHeader {
+  font-size: 0.9em;
+  opacity: 0.5;
+}
+
+#orderPlacementModal .instDayInfoValue {
+  
+}
+
+#orderPlacementModal .rowUpDown {
+  display: flex;
+  gap: 0.45em;
+  justify-content: center;
+  align-items: center;
+}
+
+#orderPlacementModal .rowUpDown span {
+  min-width: 2.9em;
+}
+
+.rowQuantity .su-input-group {
+  margin-bottom: 0px;
+}
+
+.rowQuantity .su-input-group input {
+  padding: 2px 8px;
+  text-align: center;
+  caret-color: #5c5c5c;
+}
+
+[data-theme="default"] .rowQuantity .su-input-group input {
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+}
+
+#orderPlacementModal .rowUpDown .fa-solid {
+  font-size: 1.25em;
+  color: #aeaeae;
+  cursor: pointer;
+}
+
+#orderPlacementModal .modal-footer .infoHeader {
+  font-weight: bold;
+  font-size: 0.92em;
+  color: #757575;
+  line-height: 1.3;
+}
+
+#orderPlacementModal .modal-footer .infoContent {
+  font-weight: bold;
+  font-size: 1.09em;
+}
+
+[data-theme="default"] #orderPlacementModal .rowUpDown .fa-solid {
+  color: #939393;
+}
+
+#orderPlacementModal .orderPlacementResponseDiv {
+  display: flex;
+  margin: 2px 5px;
+  color: #b7b7b7;
+  align-items: center;
+  gap: 0.25em;
+}
+
+
+#orderPlacementModal .responseMessage {
+  visibility: hidden;
+}

@@ -1,0 +1,513 @@
+#chartRootParentIndexMeta {
+  position: absolute;
+  visibility: collapse;
+}
+
+.page-positions #chartRootParentIndexMeta {
+  margin: 10px;
+  border: solid 2px;
+  border-radius: 5px;
+  border-color: #1280d752;
+  position: relative;
+  visibility: visible;
+  padding: 0.5em 0em 0.25em 0em;
+}
+
+#chartRootParentIndexMeta.disabledIndexMetaChart {
+  display: none;
+}
+
+#chartRootParentIndexMeta.hiddenChart {
+  border: 1px solid #1280d72b;
+  border-right: 0px;
+  border-left: 0px;
+  padding: 0em;
+}
+
+#chartRootParentIndexMeta.fullView {
+  background-color: #1d1d1d;
+  height: 100%;
+  z-index: 200;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 5%;
+  margin: 0px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.lightWeightChartContainer {
+  display: flex;
+  align-items: center;
+}
+
+#lightWeightChartIndexMetaParent {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.zBroker #lightWeightChartIndexMetaParent {
+  position: relative;
+}
+
+.hiddenChart .lightWeightChartContainer {
+  display: none;
+}
+
+#lightWeightChartIndexMetaParent .tv-lightweight-charts {
+  margin: auto;
+}
+
+.zBroker #lightWeightChartIndexMetaParent .tv-lightweight-charts {
+  height: 400px !important;
+}
+
+.kBroker #lightWeightChartIndexMetaParent .tv-lightweight-charts {
+  height: 28.5em !important;
+}
+
+.chatControlRightButtonSet {
+  display: flex;
+}
+
+.fullView #lightWeightChartIndexMetaParent .tv-lightweight-charts {
+  height: 100% !important;
+}
+
+.fullView .lightWeightChartContainer {
+  
+  
+  
+
+  flex: 1;
+  overflow: hidden;
+  margin-bottom: 0.4em;
+
+}
+
+.fullView #lightWeightChartIndexMetaParent {
+  
+  
+  height: 100%;
+}
+
+.fullView .chatControlRightButtonSet {
+  margin-right: 1%;
+}
+
+.chartShowButton {
+  display: none;
+}
+
+#chartIndexMetaCloseButton {
+  display: block;
+}
+
+#chartIndexMetaCloseButton .fa-solid {
+  font-size: 1.6rem;
+}
+
+#chartIndexMetaMinButton {
+  display: none;
+}
+
+.fullView #chartIndexMetaMaxButton {
+  display: none;
+}
+
+.fullView #chartIndexMetaMinButton {
+  display: block;
+}
+
+.fullView #chartIndexMetaCloseButton {
+  display: none;
+}
+
+.hiddenChart #chartIndexMetaMaxButton {
+  display: none;
+}
+
+.hiddenChart .chartShowButton {
+  display: block;
+}
+
+.hiddenChart #chartIndexMetaCloseButton {
+  display: none;
+}
+
+.chartControlDiv {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: #8b8b8b6b solid 1px;
+  padding: 0.15em 0em 0.85em 0em;
+}
+
+.zBroker .chartControlDiv {
+  font-size: 0.875rem;
+}
+
+[data-theme="default"] .chartControlDiv {
+  background-color: #ffffff;
+}
+
+.hiddenChart .chartControlDiv {
+  padding: 0.35em 0rem;
+  cursor: pointer;
+  border-bottom: 0px;
+}
+
+#chartHederIndexMetaLeftDiv {
+  
+  display: flex;
+  align-items: center;
+  
+  white-space: nowrap;
+}
+
+
+
+#chartIndexMetaControlSet {
+  display: flex;
+  align-items: center;
+  
+  justify-content: center;
+}
+
+.zBroker #chartIndexMetaControlSet {
+  margin-right: 10px;
+  gap: 1.3rem;
+}
+
+.kBroker #chartIndexMetaControlSet {
+  margin-right: 0.8em;
+  gap: 1.4em;
+}
+
+.hiddenChart #chartIndexMetaControlSet {
+  display: none;
+}
+
+#chartHeaderIndexMeta {
+  font-size: 1em;
+  margin: 0px 0.5em;
+  
+  color: #1280d7;
+  font-weight: bold;
+}
+
+#chartHeaderIndexMeta .brandLink {
+  color: #1280d7;
+}
+
+.indexMetaSymbolSelect {
+  font-weight: bold;
+  background: var(--color-bg-default);
+  
+  border-color: #3f3f3f;
+  border-radius: 4px;
+}
+
+.zBroker .indexMetaSymbolSelect {
+  min-width: 6rem;
+  padding: 0.15rem 0.2rem;
+}
+
+.kBroker .indexMetaSymbolSelect {
+  min-width: 7em;
+  padding: 0.15em 0.2em;
+}
+
+[data-theme="default"] .indexMetaSymbolSelect {
+  
+  
+  border-color: #a7a7a7;
+}
+
+.chartAxis {
+  user-select: none;
+  font-weight: bold;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.leftChartAxisSpan {
+  transform-origin: top left;
+  writing-mode: vertical-lr;
+  position: relative;
+  margin-left: 0.5rem;
+  text-align: center;
+  transform: scale(-1) translate(-100%, -75%);
+  background: #7c7c7c1f;
+  padding: 0.3rem 0rem;
+  border-radius: 4px;
+}
+
+[data-theme="default"] .leftChartAxisSpan {
+  background-color: #f5f5f5;
+}
+
+.rightChartAxisSpan {
+  writing-mode: vertical-lr;
+  margin-right: 0.25rem;
+  background: #7c7c7c1f;
+  padding: 0.3rem 0rem;
+  border-radius: 4px;
+}
+
+[data-theme="default"] .rightChartAxisSpan {
+  background-color: #f5f5f5;
+}
+
+.metaChartTooltipStyle {
+  opacity: 0.9;
+  width: 12rem;
+  background-color: #181818;
+  min-width: 125px;
+  position: absolute;
+  display: none;
+  box-sizing: border-box;
+  font-size: 0.75rem;
+  text-align: left;
+  z-index: 1000;
+  top: 12px;
+  left: 12px;
+  pointer-events: none;
+  border: 2px solid #414141;
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="default"] .metaChartTooltipStyle {
+  background-color: #fff;
+  border-color: #a7a7a7;
+}
+
+.zBroker .metaChartTooltipStyle.mtmChartTooltipStyle {
+  width: unset;
+  font-size: 0.95rem;
+}
+
+.kBroker .metaChartTooltipStyle.mtmChartTooltipStyle {
+  width: unset;
+  font-size: 0.95em;
+}
+
+.metaChartTooltipParent {
+  display: flex;
+  flex-direction: row;
+  
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.mtmChartTooltipParent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.metaChartTooltipDiv {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.zBroker .metaChartTooltipDiv {
+  min-width: 5rem;
+}
+
+.kBroker .metaChartTooltipDiv {
+  min-width: 5em;
+}
+
+.mtmChartTooltipDiv {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.metaStraddleValue {
+  color: #13dda0;
+}
+
+.metaIVValue {
+  color: #ddb813;
+}
+
+.metaChartTooltipHeader {
+  
+  font-weight: bold;
+  
+}
+
+[data-theme="default"] .metaChartTooltipHeader {
+  color: #7b7b7b;
+}
+
+.indexMetaToggleParent {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  color: #a7a7a7;
+}
+
+.zBroker .indexMetaToggleParent {
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.kBroker .indexMetaToggleParent {
+  gap: 0.25em;
+  font-size: 1em;
+}
+
+[data-theme="default"] .indexMetaToggleParent {
+  color: #727272;
+}
+
+.indexMetaToggleParent .indexMetaToggleLabel {
+  min-width: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#chartIndexMetaControlSet.sliderF #indexMetaIvToggle:checked+.slider {
+  background-color: #ddb813;
+}
+
+#chartIndexMetaControlSet.sliderF #indexMetaStraddleToggle:checked+.slider {
+  background-color: #13dda0;
+}
+
+#chartIndexMetaControlSet.sliderF #indexMetaSpotToggle:checked+.slider {
+  
+  background-color: #1280d7;
+}
+
+.chartIndexMetaFooterParent {
+  display: none;
+  position: absolute;
+  bottom: 3em;
+  z-index: 15;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  flex-direction: column;
+  align-items: center;
+}
+
+.chartIndexMetaFooter {
+  display: flex;
+  justify-content: center;
+  
+  width: fit-content;
+  opacity: 0.15;
+  
+  border-radius: 4px;
+  background-color: #242424;
+  padding: 0.25em;
+}
+
+[data-theme="default"] .chartIndexMetaFooter {
+  background-color: #dbdbdb;
+}
+
+#chartRootParent .chartIndexMetaFooter {
+  opacity: 0.05;
+}
+
+[data-theme="default"] #chartRootParent .chartIndexMetaFooter {
+  opacity: 0.15;
+}
+
+.kitePlusWaterMark {
+  font-size: 2.1em;
+  font-weight: bold;
+  opacity: 0.2;
+  user-select: none;
+  text-align: center;
+}
+
+[data-theme="default"] .kitePlusWaterMark {
+  opacity: 0.12;
+}
+
+.chartIndexMetaFooter:hover {
+  opacity: 1 !important;
+  background-color: transparent;
+}
+
+.chartIndexMetaFooter .chartButtons {
+  margin: 0.125rem 0.425rem;
+}
+
+.chartIndexMetaFooter .chartButtons i {
+  font-size: 1.1rem;
+}
+
+.hiddenChart .chartIndexMetaFooter {
+  display: none;
+}
+
+.chartIndexMetaTimeFrame {
+  opacity: 0.4;
+  display: flex;
+  position: absolute;
+  top: 1em;
+  left: 5em;
+  z-index: 50;
+  
+  
+  
+  
+}
+
+.timeFrameSelect {
+  background: transparent;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  
+  border-color: #3f3f3f;
+}
+
+.timeFrameSelect option {
+  background: #252525;
+  color: #cecece;
+  font-weight: bold;
+
+}
+
+[data-theme="default"] .timeFrameSelect option {
+  background: #efefef;
+  color: #1a1a1a;
+}
+
+@media screen and (max-width: 1400px) {
+
+  .zBroker #lightWeightChartIndexMetaParent .tv-lightweight-charts {
+    margin: auto;
+    height: 350px !important;
+  }
+
+  .kBroker #lightWeightChartIndexMetaParent .tv-lightweight-charts {
+    margin: auto;
+    height: 24.9em !important;
+  }
+
+  .fullView #lightWeightChartIndexMetaParent .tv-lightweight-charts {
+    margin: auto;
+    height: 100% !important;
+  }
+}

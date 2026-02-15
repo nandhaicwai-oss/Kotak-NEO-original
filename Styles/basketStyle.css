@@ -1,0 +1,577 @@
+#basketWindowContainer {
+    display: none;
+}
+
+#positionSwitcherBG {
+    display: none;
+    background-color: #000;
+    
+    opacity: 0.1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: 55;
+}
+
+#positionSwitcherModal {
+    text-align: center;
+    display: flex;
+    margin: auto;
+    padding: 3px;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: var(--baseFontWidth);
+}
+
+#positionSwitcherModal .modal-container {
+    width: 49em;
+    padding: 0px 15px;
+    border: 2px solid var(--modalBorder);
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 0px;
+    z-index: 56;
+    position: fixed;
+    bottom: 0;
+    
+    margin-bottom: calc(var(--statusBarHeight) + 0.1em);
+    animation: modalWindowFadeIn 0.10s ease-in-out;
+
+}
+
+#positionSwitcherModal .modal-container.closing {
+    animation: modalWindowFadeOut 0.10s ease-in-out forwards;
+}
+
+#positionSwitcherModal .dragHeaderHandle {
+    cursor: move;
+    height: 1.9em;
+    position: absolute;
+    top: 0;
+    
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+[data-theme="default"] #positionSwitcherModal .modal-container {
+    border-color: #86868670;
+}
+
+#positionSwitcherModal .modal-header {
+    font-weight: bold;
+    margin: 7px 0px;
+    border-bottom: 0px;
+}
+
+#positionSwitcherModal .modal-footer {
+    border-top: 0px;
+    margin-top: 0px;
+    padding: 1.075em;
+    margin: 0.3571em 0em;
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#positionSwitcherModal .searchOpen.modal-footer {
+    filter: blur(0.2em);
+}
+
+#positionSwitcherModal .searchOpen.modal-body {
+    filter: blur(0.2em);
+}
+
+#positionSwitcherModal .searchOpen.modal-footer>* {
+    pointer-events: none;
+}
+
+#positionSwitcherModal .searchOpen.modal-body>* {
+    pointer-events: none;
+}
+
+[data-theme="default"] #positionSwitcherModal .modal-footer {
+    background-color: #ffffff;
+    border: 1px solid #f3f3f3;
+}
+
+#positionSwitcherModal .modal-body .modalBodyBottomDiv {
+    margin: 12px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#positionSwitcherModal .fa-solid:hover {
+    opacity: 0.8;
+}
+
+#positionSwitcherModal .modalBodyBottomDiv .addBtn {
+    font-size: 1.7em;
+    color: #4987ee;
+    cursor: pointer;
+}
+
+#positionSwitcherModal .modalBodyBottomDiv .modalBottomDivChild {
+    flex-basis: 33%;
+}
+
+#positionSwitcherModal .modalBodyBottomDiv .basketGroupQuantity {
+    justify-content: right;
+}
+
+.noPos #positionSwitcherModal .modalBodyBottomDiv .basketGroupQuantity {
+    visibility: hidden;
+}
+
+#positionSwitcherModal .modal-footer .basketInfoHeader {
+    font-weight: bold;
+    font-size: 0.92em;
+    color: #757575;
+    line-height: 1.3;
+}
+
+#positionSwitcherModal .modal-footer .basketInfoContent {
+    font-weight: bold;
+    font-size: 1.09em;
+}
+
+#positionSwitcherModal .basketStateInfo {
+    flex: 1 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#positionSwitcherModal .modal-header .row {
+    line-height: 1.4;
+    margin: 5px 0px;
+    
+}
+
+#positionSwitcherModal .modal-header .orderDayType {
+    user-select: none;
+    cursor: pointer;
+    font-size: 0.75em;
+    border: 1px solid;
+}
+
+#positionSwitcherModal .modal-header .basketPrice {
+    font-size: 1.15em;
+    margin: 0px 3px;
+}
+
+#positionSwitcherModal .modal-header .basketChange {
+    font-size: 1.02em;
+    margin: 0px 3px;
+    color: #888888;
+    text-align: left;
+}
+
+#positionSwitcherModal .modal-footer .row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#positionSwitcherModal .modal-footer .buttonExecute {
+    
+    background-color: var(--accent-color);
+    border-color: var(--accent-border-color);
+    font-weight: bold;
+
+}
+
+#positionSwitcherModal .modal-footer button {
+    font-size: 1.05em;
+    padding: 0.8em 1.35em;
+}
+
+.prem #positionSwitcherModal .executeButtonLock {
+    display: none;
+}
+
+.prem #positionSwitcherModal .executeButtonText {
+    display: block;
+}
+
+#positionSwitcherModal .executeButtonLock {
+    display: block;
+}
+
+#positionSwitcherModal .executeButtonText {
+    display: none;
+}
+
+#positionSwitcherModal .basketNoPosHeader {
+    display: none;
+    user-select: none;
+}
+
+.noPos #positionSwitcherModal .basketNoPosHeader {
+    display: block;
+    margin: 2.5em 0em;
+    font-weight: bold;
+    color: #6e6e6e;
+}
+
+.noPos #positionSwitcherModal table {
+    display: none;
+}
+
+#positionSwitcherModal th {
+    opacity: 0.3;
+    font-size: 0.9em;
+    padding-bottom: 8px;
+}
+
+[data-theme="default"] #positionSwitcherModal th {
+    opacity: 0.6;
+}
+
+#positionSwitcherModal .searchParentDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8em;
+    margin-bottom: 0.2em;
+}
+
+#positionSwitcherModal .searchButtonSymbol {
+    cursor: pointer;
+    color: #616161;
+}
+
+#positionSwitcherModal .basketSearchDiv input {
+    outline: 2px solid #81818112;
+    padding: 3px 8px;
+    text-align: center;
+    caret-color: #5c5c5c;
+    border-color: #5353534d;
+    border-width: 2px;
+    border-radius: 2px;
+}
+
+[data-theme="default"] #positionSwitcherModal .basketSearchDiv input {
+    border-width: 1px;
+    background: #f9f9f9;
+}
+
+#positionSwitcherModal .ulParentDiv {
+    z-index: 13;
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--list-bg-color);
+    border-bottom: 1px solid #7171714f;
+}
+
+[data-theme="default"] #positionSwitcherModal .ulParentDiv {
+    background-color: #fff;
+}
+
+#positionSwitcherModal .basketSearchDiv ul {
+    
+    margin: 0px;
+    width: 100%;
+    font-size: 1em;
+    padding: 0px;
+
+    
+}
+
+#positionSwitcherModal .searchClose {
+    color: #989898;
+    font-size: 1.5em;
+    margin: 0.5em 0px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#positionSwitcherModal .searchClose:hover {
+    opacity: 0.8;
+}
+
+#positionSwitcherModal .basketSearchDiv .searchClose:hover {
+    opacity: 0.9;
+}
+
+#positionSwitcherModal .basketSearchDiv ul li {
+    
+    list-style: none;
+    line-height: 1;
+    cursor: pointer;
+    margin: 0px 0px;
+    padding: 7px 0px;
+}
+
+#positionSwitcherModal .basketSearchDiv ul li:hover {
+    background-color: var(--rowHoverColor);
+    
+}
+
+#positionSwitcherModal .basketSearchDiv ul li.active {
+    background-color: #333333;
+    
+}
+
+[data-theme="default"] #positionSwitcherModal .basketSearchDiv ul li:hover {
+    background-color: #e7e7e7;
+}
+
+[data-theme="default"] #positionSwitcherModal .basketSearchDiv ul li.active {
+    background-color: #e7e7e7;
+}
+
+#positionSwitcherModal .basketSearchDiv ul:first-child {
+    padding-top: 2px;
+}
+
+#positionSwitcherModal thead tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+#positionSwitcherModal tbody tr {
+    border-bottom: 2px solid #ffffff08;
+}
+
+[data-theme="default"] #positionSwitcherModal tbody tr {
+    border-bottom: 1px solid #37373721;
+}
+
+#positionSwitcherModal tbody tr.disabled {
+    opacity: 0.5;
+}
+
+#positionSwitcherModal tbody tr.sellPosRow:not(.disabled) {
+    background-color: #d54e4908;
+}
+
+#positionSwitcherModal tbody tr.buyPosRow:not(.disabled) {
+    background-color: #0065ff08;
+}
+
+[data-theme="default"] #positionSwitcherModal tbody tr.sellPosRow {
+    background-color: #d54e4900;
+}
+
+[data-theme="default"] #positionSwitcherModal tbody tr.buyPosRow {
+    background-color: #0065ff00;
+}
+
+#positionSwitcherModal tbody td {
+    padding: 0.72em 0.36em;
+}
+
+#positionSwitcherModal input[type="checkbox"] {
+    accent-color: #4caf50;
+}
+
+#positionSwitcherModal .posCheckbox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0em 0.25em;
+}
+
+#positionSwitcherModal .posCheckbox input {
+    height: 14px;
+    accent-color: #ffffff;
+}
+
+#positionSwitcherModal .posExpiry select {
+    background: transparent;
+    padding: 0.145em 0.35em;
+}
+
+[data-theme="default"] #positionSwitcherModal .posExpiry select {
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+}
+
+#positionSwitcherModal .posExpiry select * {
+    background: var(--color-bg-default);
+    padding: 2px 5px;
+}
+
+#positionSwitcherModal tbody .posLTP {
+    min-width: 3em;
+}
+
+#positionSwitcherModal .positionRow {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#positionSwitcherModal .posBuySellType {
+    cursor: pointer;
+    user-select: none;
+    min-width: 3em;
+}
+
+#positionSwitcherModal .posBuySellType span {
+    border: 1px solid;
+    font-size: 0.645em;
+}
+
+#positionSwitcherModal .posCallPutType {
+    
+    cursor: pointer;
+    user-select: none;
+}
+
+#positionSwitcherModal .posCallPutType span {
+    background: #c89f2a4f;
+    color: #ffffff;
+    padding: 1px 9px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+    border: 1px solid;
+    border-color: #9c9c9c61;
+}
+
+[data-theme="default"] #positionSwitcherModal .posCallPutType span {
+    color: #000;
+}
+
+#positionSwitcherModal .posCallPutType span.call {
+    background-color: #9d5f004a;
+}
+
+#positionSwitcherModal .posCallPutType span.put {
+    background-color: #2ac89c2b;
+}
+
+[data-theme="default"] #positionSwitcherModal .posCallPutType span.call {
+    background-color: #ffa61d4a;
+}
+
+[data-theme="default"] #positionSwitcherModal .posCallPutType span.put {
+    background-color: #53ffcf59;
+}
+
+#positionSwitcherModal .rowUpDown {
+    display: flex;
+    gap: 0.45em;
+    justify-content: center;
+    align-items: center;
+}
+
+#positionSwitcherModal .rowUpDown span {
+    min-width: 2.9em;
+}
+
+#positionSwitcherModal .basketQuantityMultiplier {
+    font-size: 0.7em;
+    font-weight: bold;
+    opacity: 0.75;
+}
+
+.rowQuantity .su-input-group {
+    margin-bottom: 0px;
+}
+
+.rowQuantity .su-input-group input {
+    padding: 2px 8px;
+    text-align: center;
+    caret-color: #5c5c5c;
+}
+
+[data-theme="default"] .rowQuantity .su-input-group input {
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+}
+
+#positionSwitcherModal .rowUpDown .fa-solid {
+    font-size: 1.25em;
+    color: #aeaeae;
+    cursor: pointer;
+}
+
+[data-theme="default"] #positionSwitcherModal .rowUpDown .fa-solid {
+    color: #979797;
+}
+
+#positionSwitcherModal .posDelete .fa-solid {
+    color: #b04141;
+    cursor: pointer;
+    padding: 0px 0.3em;
+}
+
+[data-theme="default"] #positionSwitcherModal .posDelete .fa-solid {
+    color: #f26e6e;
+}
+
+#positionSwitcherModal .basketResponseDiv {
+    display: flex;
+    margin: 2px 5px;
+}
+
+#positionSwitcherModal .responseMessage {
+    visibility: hidden;
+}
+
+#positionSwitcherModal .basketPageDivParent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    user-select: none;
+}
+
+#positionSwitcherModal .basketPageBtnSetParent {
+    display: flex;
+    flex-direction: row;
+}
+
+#positionSwitcherModal .basketPageBtn.selectedBtn {
+    border-top: 2px solid #3b83d4 !important;
+    color: #3b83d4 !important;
+}
+
+#positionSwitcherModal .basketPageBtn {
+    padding: 0.1em 1.2em;
+    border: 1px #1a1a1a;
+    border-style: none solid none solid;
+    color: #6e6e6e;
+}
+
+[data-theme="default"] #positionSwitcherModal .basketPageBtn {
+    border: 1px #e1e1e1;
+    border-style: none solid none solid;
+    color: #8d8d8d;
+}
+
+#positionSwitcherModal .basketPageUtilityBtnSet {
+    display: flex;
+    gap: 1em;
+}
+
+#positionSwitcherModal .basketPageBtn:hover {
+    background: var(--rowHoverColor);
+    cursor: pointer;
+}
+
+[data-theme="default"] #positionSwitcherModal .basketPageBtn:hover {
+    background: #ececec;
+}
+
+#positionSwitcherModal .basketPageBtnText {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+
+    #positionSwitcherModal .modal-container {
+        width: 52em;
+    }
+
+}

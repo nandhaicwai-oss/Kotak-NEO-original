@@ -1,1 +1,90 @@
-async function stableFetch(t,a={}){await new Promise((t=>setTimeout(t,120)));try{return await fetch(t,a)}catch(e){return await new Promise((t=>setTimeout(t,200))),fetch(t,a)}}chrome.runtime.onMessage.addListener(((t,a,e)=>"API_FETCH"===t.type?((async()=>{try{let a={method:t.method||"POST",headers:t.headers};t.body&&(a.body="string"==typeof t.body?t.body:JSON.stringify(t.body));const s=await stableFetch(t.url,a);if(s.ok){const t=await s.json().catch((()=>({})));e({ok:!0,status:s.status,data:t})}else{const t=await s.text();let a,c;try{a=JSON.parse(t)}catch{c=t}e({ok:!1,status:s.status,error:c,data:a})}}catch(t){e({ok:!1,error:t.message})}})(),!0):"API_PLAIN_FETCH"===t.type?((async()=>{try{const a=await stableFetch(t.url),s=await a.text().catch((()=>({})));e({ok:a.ok,status:a.status,data:s})}catch(t){e({ok:!1,error:t.message})}})(),!0):void 0));
+function isKotakUrl(input) {
+    try {
+        const url = new URL(input);
+        return url.hostname === "kotaksecurities.com" || url.hostname.endsWith(".kotaksecurities.com");
+    } catch {
+        return false;
+    }
+}
+
+function isMethodReadOnly(method) {
+    const normalized = String(method || "GET").toUpperCase();
+    return normalized === "GET" || normalized === "HEAD";
+}
+
+function canSendRequest(url, method, hasBody) {
+    if (isKotakUrl(url)) {
+        return true;
+    }
+    return isMethodReadOnly(method) && !hasBody;
+}
+
+async function stableFetch(url, options = {}) {
+    await new Promise((resolve) => setTimeout(resolve, 120));
+    try {
+        return await fetch(url, options);
+    } catch {
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        return fetch(url, options);
+    }
+}
+
+chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
+    if (message.type === "API_FETCH") {
+        (async () => {
+            try {
+                const method = message.method || "POST";
+                const hasBody = message.body !== undefined && message.body !== null;
+
+                if (!canSendRequest(message.url, method, hasBody)) {
+                    sendResponse({ ok: false, error: "Blocked outbound write to non-Kotak domain" });
+                    return;
+                }
+
+                const requestOptions = {
+                    method,
+                    headers: message.headers,
+                };
+
+                if (hasBody) {
+                    requestOptions.body = typeof message.body === "string" ? message.body : JSON.stringify(message.body);
+                }
+
+                const response = await stableFetch(message.url, requestOptions);
+
+                if (response.ok) {
+                    const data = await response.json().catch(() => ({}));
+                    sendResponse({ ok: true, status: response.status, data });
+                } else {
+                    const rawText = await response.text();
+                    let parsedData;
+                    let errorText;
+                    try {
+                        parsedData = JSON.parse(rawText);
+                    } catch {
+                        errorText = rawText;
+                    }
+                    sendResponse({ ok: false, status: response.status, error: errorText, data: parsedData });
+                }
+            } catch (error) {
+                sendResponse({ ok: false, error: error.message });
+            }
+        })();
+        return true;
+    }
+
+    if (message.type === "API_PLAIN_FETCH") {
+        (async () => {
+            try {
+                const response = await stableFetch(message.url);
+                const data = await response.text().catch(() => ({}));
+                sendResponse({ ok: response.ok, status: response.status, data });
+            } catch (error) {
+                sendResponse({ ok: false, error: error.message });
+            }
+        })();
+        return true;
+    }
+
+    return undefined;
+});

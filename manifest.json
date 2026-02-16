@@ -1,6 +1,5 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
+    "update_url": "https://clients2.google.com/service/update2/crx",
     "name": "NeoPlus For Kotak",
     "description": "Enhance the Kotak Neo web trading platform with NeoPlus!",
     "version": "1.315",
@@ -29,6 +28,7 @@
     "content_scripts": [
         {
             "js": [
+                "Scripts/Plugins/OutboundRequestGuard.js",
                 "Scripts/Plugins/helper.js",
                 "Scripts/Plugins/papaParse.js",
                 "Scripts/Plugins/socketIO.js",
